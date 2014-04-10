@@ -1,0 +1,544 @@
+/* =Slideshow styles
+----------------------------------------------- */
+.ju-slideshow {
+	position: relative;
+	width: 800px;
+	height: 300px;
+	/*overflow: hidden;*/
+}
+
+/* Box shadow */
+.ju-slideshow.shadow1:after {
+    background: url("../images/shadow/shadow1.png") no-repeat scroll 50% 0 / 100% auto transparent;
+    content: "";
+    height: 30px;
+	bottom: -30px;
+    position: absolute;
+    width: 100%;
+}
+
+.ju-slideshow.shadow2:after {
+    background: url("../images/shadow/shadow2.png") no-repeat scroll 50% 0 / 100% auto transparent;
+    content: "";
+    height: 60px;
+	bottom: -60px;
+    position: absolute;
+    width: 100%;
+}
+
+.ju-slideshow.shadow3:after {
+    background: url("../images/shadow/shadow3.png") no-repeat scroll 50% 0 / 100% auto transparent;
+    content: "";
+    height: 60px;
+	bottom: -60px;
+    position: absolute;
+    width: 100%;
+}
+
+.ju-slideshow.shadow4:after {
+    background: url("../images/shadow/shadow4.png") no-repeat scroll 50% 0 / 100% auto transparent;
+    content: "";
+    height: 30px;
+	bottom: -30px;
+    position: absolute;
+    width: 100%;
+}
+
+.ju-slideshow.shadow5:after {
+    background: url("../images/shadow/shadow5.png") no-repeat scroll 50% 0 / 100% auto transparent;
+    content: "";
+    height: 30px;
+	bottom: -30px;
+    position: absolute;
+    width: 100%;
+}
+
+.ju-slideshow.shadow6 {
+	box-shadow: 0 1px 5px 0 #AAA;
+}
+
+.ju-slideshow img {
+	max-width:none !important;
+}
+
+/* Tip for stildv */
+.ju-slideshow ul {
+	display: none;
+}
+
+.ju-slideshow .ju-slide-container {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.ju-slideshow .ju-slide-main-wrap {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.ju-slideshow .ju-slide-main {
+	overflow: hidden;
+}
+
+.ju-slideshow .ju-slide-main a {
+    border: 0 none !important;
+    display: block;
+    margin: 0 !important;
+    overflow: hidden;
+    padding: 0 !important;
+}
+
+.ju-slideshow .ju-slide-main img {
+	display: none;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+/* =Box clone
+-------------------------------------------------------------- */
+.ju-slideshow .box_clone {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100px;
+	overflow: hidden;
+	display: none;
+	z-index: 20;
+}
+
+.ju-slideshow .box_clone img {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	margin: 0;
+	padding: 0;
+	z-index: 20;
+}
+
+/* =Navigation
+-------------------------------------------------------------- */
+.ju-slideshow .prev_button {
+	position: absolute;
+	top: 50%;
+	left: 35px;
+	width: 42px;
+	height: 42px;
+	overflow: hidden;
+	text-indent: -9999em;
+	background: url("../images/prev.png") no-repeat scroll left top transparent;
+	cursor: pointer;
+	margin-top: -21px;
+	z-index: 152;
+	margin-top: -25px;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.ju-slideshow .next_button {
+	position: absolute;
+	top: 50%;
+	right: 35px;
+	width: 42px;
+	height: 42px;
+	overflow: hidden;
+	text-indent: -9999em;
+	background: url("../images/next.png") no-repeat scroll left top transparent;
+	cursor: pointer;
+	margin-top: -21px;
+	z-index: 152;
+	margin-top: -25px;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.ju-slideshow .prev_button:hover, .ju-slideshow .next_button:hover {
+	opacity: 0.9;
+}
+
+/* =Numbers
+-------------------------------------------------------------- */
+.ju-slideshow .ju-slide-navigation {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	z-index: 151;
+	background: #000;
+	color: #FFF;
+	font: bold 11px arial;
+	padding: 5px;
+	opacity: 0.75;
+}
+
+.ju-slideshow .ju-slide-navigation .image_number {
+	background: #333;
+	float: left;
+	padding: 2px 10px;
+	margin: 0px 5px 0px 0px;
+	cursor: pointer;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.ju-slideshow .ju-slide-navigation .image_number:hover {
+	background: #CC0000;
+}
+
+.ju-slideshow .ju-slide-navigation .image_number_select {
+	background: #CC0000;
+	float: left;
+	padding: 2px 10px;
+	margin: 0px 2px;
+}
+
+/* =Thumbs
+	Change width and height to customization dimension thumb
+-------------------------------------------------------------- */
+.ju-slideshow .ju-slide-thumb-container {
+	position: relative;
+	overflow: hidden;
+	height: 50px;
+}
+
+.ju-slideshow .ju-slide-thumb-navigation {
+	overflow: hidden;
+	top: 0px;
+	left: 0px;
+	padding: 0px ! important;
+	z-index: 151;
+	opacity: 1;
+}
+
+.ju-slideshow .ju-slide-thumb-navigation .image_number {
+	overflow: hidden;
+	width: 100px;
+	height: 50px;
+	position: relative;
+	margin: 4px;
+	padding: 3px;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;	/* Firefox, other Gecko */
+	box-sizing: border-box;		 /* Opera/IE 8+ */
+}
+
+.ju-slideshow .ju-slide-thumb-navigation .image_number img {
+	position: relative;
+	width: 100% !important;
+	height: 100% !important;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;	/* Firefox, other Gecko */
+	box-sizing: border-box;		 /* Opera/IE 8+ */
+}
+
+.ju-slideshow .box_scroll_thumbs {
+	padding: 0px;
+}
+
+.ju-slideshow .box_scroll_thumbs .scroll_thumbs {
+	position: absolute;
+	bottom: 60px;
+	left: 50px;
+	background: #ccc;
+	background: -moz-linear-gradient(-90deg, #555, #fff);
+	background: -webkit-gradient(linear, left top, left bottom, from(#555), to(#fff));	width: 200px;
+	width: 200px;
+	height: 10px;
+	overflow: hidden;
+	text-indent: -9999em;
+	z-index: 101;
+	cursor: pointer;
+	border: 0px solid #333;
+}
+
+.ju-slideshow .vertical_thumbs {
+	top: 0px;
+	height: 100%;
+	position: absolute;
+	right: 0px;
+}
+
+.ju-slideshow .horizontal_thumbs {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+}
+
+/* =Dots
+-------------------------------------------------------------- */
+.ju-slideshow .ju-slide-navigation-dots {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	z-index: 151;
+	padding: 5px;
+	margin: 0px 5px;
+}
+
+.ju-slideshow .ju-slide-navigation-dots .image_number {
+	background: #333;
+	float: left;
+	margin: 0px 5px 0px 0px;
+	cursor: pointer;
+	width: 18px;
+	height: 18px;
+	text-indent: -9999em;
+	overflow: hidden;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.box_skitter .info_slide_dots .image_number:hover {
+	background: #000;
+}
+
+.ju-slideshow .ju-slide-navigation-dots .image_number_select {
+	background: #CC0000;
+	float: left;
+	margin: 0px 5px 0px 0px;
+}
+
+.ju-slideshow .ju-slide-navigation-numbers {
+	margin: 0px 5px;
+}
+
+/* =Loading
+-------------------------------------------------------------- */
+.ju-slideshow .loading {
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	z-index: 10000;
+	margin: -16px;
+	color: #FFFFFF;
+	text-indent: -9999em;
+	overflow: hidden;
+	background: url("../images/loader.gif") no-repeat scroll left top transparent;
+	width: 32px;
+	height: 32px;
+}
+
+/* =Label
+-------------------------------------------------------------- */
+.ju-slideshow .ju-slide-desc {
+	z-index: 150;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	color: #FFFFFF;
+	display: none;
+	opacity: 0.9;
+	overflow: hidden;
+	background: #000;
+	padding: 10px;
+	text-align: left;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;	/* Firefox, other Gecko */
+	box-sizing: border-box;		 /* Opera/IE 8+ */
+	max-height: 100%;
+	max-width: 100%;
+}
+
+.ju-slideshow .ju-slide-desc-inner {
+	display: inline-block;
+	max-height: 100%;
+	max-width: 100%;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.ju-slideshow .ju-slide-desc .label-title {
+	clear: both;
+	display: inline-block;
+	float: left;
+	margin-bottom: 10px;
+}
+
+.ju-slideshow .ju-slide-desc .label-desc {
+	clear: both;
+	display: inline-block;
+	float: left;
+	font-size: 12px;
+	margin-bottom: 10px;
+}
+
+.ju-slideshow .ju-slide-desc .label-readmore {
+	clear: both;
+	display: inline-block;
+	float: left;
+	margin-bottom: 10px;
+}
+
+.ju-slideshow .ju-slide-desc a.readmore {
+	display: block;
+	float: left;
+	padding: 3px;
+	text-decoration: none;
+}
+
+.ju-slideshow .ju-slide-navigation * {
+	font-family: Consolas,arial,tahoma ! important;
+}
+
+.ju-slideshow .progressbar {
+	background: #000;
+	position: absolute;
+	top: 5px;
+	left: 15px;
+	height: 8px;
+	width: auto;
+	z-index: 151;
+	border-radius: 20px 20px 20px 20px;
+	-webkit-border-radius: 20px 20px 20px 20px;
+	opacity: 0.8;
+}
+
+/* =Preview slide
+-------------------------------------------------------------- */
+.ju-slideshow .preview_slide {
+	display: none;
+	position: absolute;
+	z-index: 152;
+	width: 100px;
+	height: 100px;
+	background: #FFF;
+	border: 1px solid #222222;
+	-moz-box-shadow: rgba(0,0,0,0.7) 2px 2px 5px;
+	-webkit-box-shadow: rgba(0,0,0,0.7) 2px 2px 5px;
+	box-shadow: rgba(0,0,0,0.7) 2px 2px 5px;
+	overflow: hidden;
+}
+
+.ju-slideshow .preview_slide ul {
+	overflow: hidden !important;
+	margin: 0px ! important;
+	padding: 0px ! important;
+	list-style: none !important;
+	display: block !important;
+	position: absolute !important;
+	top: 0px;
+	left: 0px;
+}
+
+.ju-slideshow .preview_slide ul li {
+	width: 100px;
+	height: 100px;
+	overflow: hidden !important;
+	float: left !important;
+	margin: 0px ! important;
+	padding: 0px ! important;
+	position: relative !important;
+	display: block !important;
+}
+
+.ju-slideshow .preview_slide ul li img {
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	height: 150px;
+	width: auto;
+}
+
+/* =Focus
+-------------------------------------------------------------- */
+#ju-slideshow-overlay, #ju-slideshow-fullscreen-overlay {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 9998;
+	opacity: 1;
+	background: #000;
+}
+
+.ju-slideshow .focus_button {
+	position: absolute;
+	top: 50%;
+	width: 42px;
+	height: 42px;
+	overflow: hidden;
+	text-indent: -9999em;
+	background: url("../images/focus-button.png") no-repeat scroll left top transparent;
+	opacity: 0.75;
+	cursor: pointer;
+	margin-top: -21px;
+	z-index: 151;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.ju-slideshow .play_pause_button {
+	position: absolute;
+	top: 50%;
+	z-index: 151;
+	width: 42px;
+	height: 42px;
+	overflow: hidden;
+	text-indent: -9999em;
+	background: url("../images/pause-button.png") no-repeat scroll left top transparent;
+	opacity: 0.75;
+	margin-top: -21px;
+	cursor: pointer;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.box_skitter .play_pause_button:hover {
+	opacity: 0.5;
+}
+
+.box_skitter .focus_button:hover {
+	opacity: 0.5;
+}
+.ju-slideshow .focus_button.fc_btn_center {
+	left: 50%;
+	margin-left: -25px;
+}
+
+.ju-slideshow .play_pause_button.pp_btn_center {
+	left: 50%;
+	margin-left: 25px;
+}
+
+.ju-slideshow .play_pause_button.play_button {
+	background: url("../images/play-button.png") no-repeat scroll left top transparent;
+}
+
+.ju-slideshow .play_pause_button:hover {
+	opacity: 0.5;
+}
+
+.ju-slideshow .focus_button:hover {
+	opacity: 0.5;
+}
+
+.ju-slideshow .ju-slide-mask {
+	position: absolute;
+	overflow: hidden;
+	z-index: 95;
+}
+
+.ju-slideshow .ju-slide-mask.mask-left {
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	width: 10px;
+}
+
+.ju-slideshow .ju-slide-mask.mask-right {
+	height: 100%;
+	right: 0px;
+	top: 0px;
+	width: 10px;
+}

@@ -1,0 +1,25 @@
+@media (max-width: 640px) {
+	<!--body{ background-color:red !important;}-->
+
+	.moduletable.bannercabeza {
+		float: none;
+		max-width: none;
+		width: 100%;
+	}
+	.js-toolbar {
+		width: 100% !important;
+		float: none;
+	}
+	.navbar-inner {
+		overflow-x: hidden;
+	}
+	.container {
+		width: 100%;
+	}
+	#copyright {
+		margin-bottom: 10px;
+	}
+	.moduletable.vipHTML {
+		margin-bottom: 10px;
+	}
+}

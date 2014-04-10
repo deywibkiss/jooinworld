@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="component" method="upgrade">
+
+	<name>com_jbolo</name>
+
+	<author>TechJoomla</author>
+	<authorEmail>extensions@techjoomla.com</authorEmail>
+	<authorUrl>www.techjoomla.com</authorUrl>
+	<copyright>Copyright(C)2012-13 TechJoomla</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<creationDate>1st Jul 2013</creationDate>
+	<version>3.0.1</version>
+
+	<description>
+		<![CDATA[
+			<h3>JBolo! is an extension that allows the users of your Joomla! site to chat with each other using a Gmail/FaceBook like chat interface.</h3>
+			<br/>
+			For docs/FAQs please visit the support section at <a href="http://techjoomla.com" target="_blank">http://techjoomla.com</a>
+		]]>
+	</description>
+
+	<!-- Site Main File Copy Section -->
+	<files folder="site">
+		<folder>controllers</folder>
+		<folder>css</folder>
+		<folder>helpers</folder>
+		<folder>jbolo</folder>
+		<folder>models</folder>
+		<folder>uploads</folder>
+		<folder>views</folder>
+		<filename>controller.php</filename>
+		<filename>downloads_log.php</filename>
+		<filename>index.html</filename>
+		<filename>jbolo.php</filename>
+		<filename>smileys.txt</filename>
+	</files>
+
+	<languages folder="site/lang">
+		<language tag="en-GB">en-GB/en-GB.com_jbolo.ini</language>
+	</languages>
+
+	<!-- SQL query files to execute on installation -->
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sqlfiles/install.sql</file>
+		</sql>
+	</install>
+
+	<administration>
+		<menu img="../administrator/components/com_jbolo/images/jbolo_menu.png">COM_JBOLO</menu>
+		<files folder="admin">
+			<folder>controllers</folder>
+			<folder>css</folder>
+			<folder>elements</folder>
+			<folder>images</folder>
+			<folder>models</folder>
+			<folder>sqlfiles</folder>
+			<folder>views</folder>
+
+			<filename>jbolo.php</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+
+		</files>
+		<languages folder="admin/lang">
+			<language tag="en-GB">en-GB/en-GB.com_jbolo.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_jbolo.sys.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_jbolo.menu.ini</language>
+		</languages>
+	</administration>
+
+	<scriptfile>script.jbolo.php</scriptfile>
+
+	<!-- default component params values backend-->
+	<config>
+		<fields>
+			<fieldset>
+				<!--COM_JBOLO_CHAT_SETTINGS-->
+				<field name="community" default="joomla" />
+				<field name="gravatar" default="0" />
+				<field name="chatusertitle" default="0" />
+				<field name="fonly" default="0" />
+				<field name="show_activity" default="0" />
+				<field name="activity_module_position" default="jbolo_activity" />
+				<field name="groupchat" default="1" />
+				<field name="maxChatUsers" default="10" />
+				<!--COM_JBOLO_OTHER_FEATURE_SETTINGS-->
+				<field name="sendfile" default="1" />
+				<field name="maxSizeLimit" default="3" />
+				<field name="allowedFileExtensions" default="avi,bmp,doc,docm,docx,dotm,dotx,gif,jpe,jpeg,jpg,mov,mp3,mpe,mpeg,mpg,pdf,png,ppsm,ppsx,ppt,pptm,pptx,wav,xls,xlsb,xlsm,xlsx,xps,zip" />
+				<field name="chathistory" default="1" />
+				<field name="jbolo_helpdesk" default="0" />
+				<!--COM_JBOLO_GENERAL_SETTINGS-->
+				<field name="enable_purge" default="0" />
+				<field name="purge_days" default="0" />
+				<field name="purge_key" default="changeMeLater" />
+				<field name="badwords" default="bad,Words" />
+				<field name="template" default="gmail" />
+				<field name="polltime" default="5" />
+				<field name="maxChatHeartbeat" default="30" />
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="community">
+	<params>
+		<param name="jboloallowall" type="radio" default="1" label="Chat Privacy:" description="Set Chat Privacy">
+			<option value="1">Public</option>
+			<option value="0">Private</option>
+		</param>
+	</params>
+</extension>

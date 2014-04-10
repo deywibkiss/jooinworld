@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="chat_settings" label="COM_JBOLO_CHAT_SETTINGS" description=""
+	addfieldpath="/administrator/components/com_jbolo/elements" >
+		<field menu="hide" name="" type="header" default="COM_JBOLO_INTERATION_SETTINGS" label="" description="" />
+		<field name="community" type="radio" default="joomla" label="COM_JBOLO_INTERATION" description="COM_JBOLO_INTERATION_DESC" class="btn-group">
+ 			<option value="joomla">COM_JBOLO_INTERATION_JOOMLA</option>
+ 			<option value="cb">COM_JBOLO_INTERATION_CB</option>
+ 			<option value="jomsocial">COM_JBOLO_INTERATION_JOMSOCIAL</option>
+ 			<option value="jomwall">COM_JBOLO_INTERATION_JOMWALL</option>
+		</field>
+		<field name="gravatar" type="radio" default="0" label="COM_JBOLO_SHOW_GRAVATAR" description="COM_JBOLO_SHOW_GRAVATAR_DESC" class="btn-group">
+ 			<option value="1">COM_JBOLO_YES</option>
+ 			<option value="0">COM_JBOLO_NO</option>
+		</field>
+		<field name="chatusertitle" type="radio" default="0" label="COM_JBOLO_CHAT_USER_TITLE" description="COM_JBOLO_CHAT_USER_TITLE_DESC" class="btn-group">
+ 			<option value="0">COM_JBOLO_NAME</option>
+ 			<option value="1">COM_JBOLO_UNAME</option>
+		</field>
+		<field name="fonly" type="radio" default="0" label="COM_JBOLO_CHAT_USER_LIST" description="COM_JBOLO_CHAT_USER_LIST_DESC" class="btn-group" >
+ 			<option value="0">COM_JBOLO_ALL</option>
+ 			<option value="1">COM_JBOLO_FONLY</option>
+		</field>
+		<field name="show_activity" type="radio" default="0" label="COM_JBOLO_SHOW_ACTIVITY" description="COM_JBOLO_SHOW_ACTIVITY_DESC" class="btn-group">
+ 			<option value="1">COM_JBOLO_YES</option>
+ 			<option value="0">COM_JBOLO_NO</option>
+		</field>
+		<field name="activity_module_position" type="text" default="jbolo_activity" label="COM_JBOLO_ACTIVITY_MOD_POSITION" description="COM_JBOLO_ACTIVITY_MOD_POSITION_DESC" />
+
+		<field menu="hide" name="" type="header" default="COM_JBOLO_GROUP_CHAT_SETTINGS" label="" description="" />
+		<field name="groupchat" type="radio" default="1" label="COM_JBOLO_ENABLE_GROUP_CHAT" description="COM_JBOLO_ENABLE_GROUP_CHAT_DESC" class="btn-group">
+ 			<option value="1">COM_JBOLO_YES</option>
+ 			<option value="0">COM_JBOLO_NO</option>
+		</field>
+		<field name="maxChatUsers" type="text" default="10" label="COM_JBOLO_MAX_GROUP_CHAT_USERS" description="COM_JBOLO_MAX_GROUP_CHAT_USERS_DEC" />
+	</fieldset>
+
+	<fieldset name="other_feature_settings" label="COM_JBOLO_OTHER_FEATURE_SETTINGS" description=""
+	addfieldpath="/administrator/components/com_jbolo/elements" >
+		<field menu="hide" name="" type="header" default="COM_JBOLO_SEND_FILE_SETTINGS" label="" description="" />
+		<field name="sendfile" type="radio" default="1" label="COM_JBOLO_ENABLE_SEND_FILE" description="COM_JBOLO_ENABLE_SEND_FILE_DESC" class="btn-group">
+ 			<option value="1">COM_JBOLO_YES</option>
+ 			<option value="0">COM_JBOLO_NO</option>
+		</field>
+		<field name="maxSizeLimit" type="text" default="3" label="COM_JBOLO_SEND_FILE_LIMIT" description="COM_JBOLO_SEND_FILE_LIMIT_DESC" />
+		<field name="allowedFileExtensions" type="textarea" rows="5" cols="60" default="avi,bmp,doc,docm,docx,dotm,dotx,gif,jpe,jpeg,jpg,mov,mp3,mpe,mpeg,mpg,pdf,png,ppsm,ppsx,ppt,pptm,pptx,wav,xls,xlsb,xlsm,xlsx,xps,zip" label="COM_JBOLO_SEND_FILE_EXTENSIONS" description="COM_JBOLO_SEND_FILE_EXTENSIONS_DESC" />
+
+		<field menu="hide" name="" type="header" default="COM_JBOLO_OTHER_SETTINGS" label="" description="" />
+		<field name="chathistory" type="radio" default="1" label="COM_JBOLO_ENABLE_CHAT_HISTORY" description="COM_JBOLO_ENABLE_CHAT_HISTORY_DESC" class="btn-group">
+			<option value="1">COM_JBOLO_YES</option>
+ 			<option value="0">COM_JBOLO_NO</option>
+		</field>
+		<field name="jbolo_helpdesk" type="radio" default="0" label="COM_JBOLO_ENABLE_JBOLO_HELPDESK_INTEGRATION" description="COM_JBOLO_ENABLE_JBOLO_HELPDESK_INTEGRATION_DESC" class="btn-group" >
+ 			<option value="1">COM_JBOLO_YES</option>
+ 			<option value="0">COM_JBOLO_NO</option>
+		</field>
+	</fieldset>
+
+	<fieldset name="general_settings" label="COM_JBOLO_GENERAL_SETTINGS" description=""
+	addfieldpath="/administrator/components/com_jbolo/elements" >
+		<field menu="hide" name="" type="header" default="COM_JBOLO_PURGE_SETTINGS" label="" description="" />
+		<field name="enable_purge" type="radio" default="0" label="COM_JBOLO_ALLOW_PURGING" description="COM_JBOLO_ALLOW_PURGING_DESC" class="btn-group">
+			<option value="1">COM_JBOLO_YES</option>
+ 			<option value="0">COM_JBOLO_NO</option>
+		</field>
+		<field name="purge_days" type="text" default="0" class="validatenumeric" label="COM_JBOLO_PURGE_DAYS" description="COM_JBOLO_PURGE_DAYS_DESC" />
+		<field name="purge_key" type="text" default="changeMeLater" label="COM_JBOLO_PURGE_KEY" description="COM_JBOLO_PURGE_KEY_DESC" />
+		<field name="cron" type="cronjoburl" label="COM_JBOLO_CRON" description="COM_JBOLO_CRON_DESC" />
+
+		<field menu="hide" name="" type="header" default="COM_JBOLO_OTHER_SETTINGS" label="" description="" />
+		<field name="badwords" type="text" default="" label="COM_JBOLO_BAD_WORDS" description="COM_JBOLO_BAD_WORDS_DESC" />
+		<field name="template" type="radio" default="gmail" label="COM_JBOLO_CHAT_TEMPLATE" description="COM_JBOLO_CHAT_TEMPLATE_DESC" class="btn-group">
+ 			<option value="gmail">COM_JBOLO_GMAIL</option>
+ 			<option value="facebook">COM_JBOLO_FACEBOOK</option>
+		</field>
+
+		<field menu="hide" name="" type="header" default="COM_JBOLO_POLLTIME_SETTINGS" label="" description="" />
+		<field name="polltime" type="text" default="5" class="validatenumeric" label="COM_JBOLO_CHAT_REFRESH_RATE" description="COM_JBOLO_CHAT_REFRESH_RATE_DESC" />
+		<field name="maxChatHeartbeat" type="text" default="30" class="validatenumeric" label="COM_JBOLO_MAX_CHAT_REFRESH_RATE_TIME" description="COM_JBOLO_MAX_CHAT_REFRESH_RATE_DESC" />
+	</fieldset>
+</config>

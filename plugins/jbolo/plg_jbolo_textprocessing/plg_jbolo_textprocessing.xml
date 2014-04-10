@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0"  type="plugin" group="jbolo" method="upgrade">
+
+	<name>Jbolo! - Text processing - Jbolo plugin</name>
+
+	<author>TechJoomla</author>
+	<authorEmail>extensions@techjoomla.com</authorEmail>
+	<authorUrl>www.techjoomla.com</authorUrl>
+	<copyright>Copyright(C)2012-13 TechJoomla</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<creationDate>1st Jul 2013</creationDate>
+	<version>3.0.1</version>
+
+	<description>
+		This plugin processes the chat message text for url,smiley and bad word filtering.
+	</description>
+
+	<files>
+		<filename plugin="plg_jbolo_textprocessing">plg_jbolo_textprocessing.php</filename>
+		<filename>index.html</filename>
+	</files>
+
+</extension>

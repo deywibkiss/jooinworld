@@ -1,0 +1,71 @@
+<% 
+    var total_no_pagas = 0;
+    var total_pagas = 0;
+    var from = 0;
+
+    
+    for( var i=0 ; i < nopagadas.length ; i++){
+        total_no_pagas += nopagadas[ i ].valor_comision;
+    }
+
+    for( var i=0 ; i < pagadas.length ; i++){
+        total_pagas += pagadas[ i ].valor_comision;
+    }
+%>
+<div class="content-referidos">
+    <ul>
+        <li><span class="data-til label-icon">Comisiones No Pagas:<i class="jw-icon interroga-icon"></i></span><span class="li-valor"><%= total_no_pagas %></span></li>
+        <li><span class="data-til label-icon">Próxima Fecha de Corte:<i class="jw-icon interroga-icon"></i></span><span  class="li-valor"><%= fechacorte %></span></li>
+        <li><span class="data-til label-icon">Próxima Fecha de Pago:<i class="jw-icon interroga-icon"></i></span><span  class="li-valor"><%= fechapago %></span></li>
+        <li><span class="data-til label-icon til-blue">Total Acumulado:<i class="jw-icon interroga-icon"></i></span><span class="li-valor til-bluebold"><%= total_pagas %></span></li>
+    </ul>
+    <h4 class="til-referidos">Histórico de Comisiones</h4>
+   <div class="datagrid center datagrid-head">
+        <table>
+            <thead>
+                <tr>
+                    <th class="datagrid-center" style="width:35%"><span>Fecha de Corte</span></th>
+                    <th class="datagrid-center"  style="width:35%"><span>Valor</span></th>
+                    <th class="datagrid-center"  style="width:35%"><span>Estado</span></th>
+                <tr>    
+            </thead>
+        </table>
+    </div>
+    <!--Historico de comisiones-->
+    <div class="datagrid center">
+        <table>
+            <tbody>
+              <% 
+              var hasta = ( comosionesall.length < 6 ) ? comosionesall.length : 6;
+
+              for( var i=from; i < ( from+hasta ) ; i++){ %>
+                <tr>
+                    <td class="datagrid-left" style="width:35%"><%= comosionesall[ i ].fecha_corte %></td>
+                    <td class="datagrid-center" style="width:35%"><%= comosionesall[ i ].valor_comision %></td>
+                    <td style="width:35%">
+            <%
+            var icono = '';
+              if( comosionesall[ i ].estado_pago == '1'){ 
+                icono = 'Pagado';
+              }else{
+                icono = 'Sin Pagar';
+              }             
+            %>
+            <%= icono %>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+        <div class="paginado-table">
+            <ul>
+              <% var contador = 1; 
+                if( comosionesall.length > 6){
+                    for( var i=0; i < comosionesall.length ; i += 6){ %>
+                    <li><a href="index.php?option=com_referidos&render=miscomisiones&from=<%= i %>"><%= contador++ %></a></li>
+                    <% } 
+                }%>
+            </ul>
+        </div>
+    </div>
+</div>    

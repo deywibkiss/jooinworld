@@ -1,0 +1,40 @@
+@media (min-width: 641px) and (max-width: 1024px) {
+	
+	<!--body{ background-color: black !important;}-->
+
+	.navbar-inner {
+		max-width: 718px;
+	}
+
+	.navbar.js-toolbar {
+		overflow-x: hidden !important;
+	}
+	.js-toolbar {
+		width: 100% !important;
+	}
+
+	.moduletable.vipHTML {
+		max-width: 190px;
+		float: left;
+		margin-bottom: 0px;
+		z-index: 10;
+	}
+
+	.moduletable.vipHTML {
+		width: 18%;
+	}
+	.moduletable.bannercabeza {
+		width: 80%;
+	}
+
+	.moduletable.bannerhome {
+		max-height: 200px;
+	}
+	.moduletable.bannerhome h3 {
+		margin-top: 0px;
+	}
+	#tronco {
+
+		padding-bottom: 41px;
+	}
+}

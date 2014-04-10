@@ -1,0 +1,24 @@
+@media (min-width: 2001px) {
+	<!--body{ background-color: blue !important;}-->
+	.row {
+		margin-right: 70px !important;
+		margin-left: 70px !important;
+	}
+	#bottom {
+		margin: 10px;
+		margin-top: 30px;
+	}
+	.col-md-9 {
+		width: 75%;
+		margin-right: -55px !important;
+		padding-right: 110px !important;
+		padding-left: 56px !important;
+	}
+	.col-md-3 {
+		width: 30% !important;
+	}
+	.js-focus {
+		margin-right: -38px;
+		margin-left: -44px;
+	}
+}

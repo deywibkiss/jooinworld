@@ -1,0 +1,12 @@
+#cabecera {
+	background: #5A73C3;
+	height: 62px;
+}
+#logotipo {
+
+	height: 60px;
+}
+#message {
+	background: lightyellow;
+	min-height: 50px;
+}

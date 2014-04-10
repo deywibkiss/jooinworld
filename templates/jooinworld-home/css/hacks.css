@@ -1,0 +1,14 @@
+@-moz-document url-prefix("") {
+
+	@media (max-width: 1200px) {
+		#cProfileWrapper{
+			margin-top:35px;
+		}
+		.moduletable.vipHTML {
+	
+    margin-bottom: -13px!important;
+    margin-top: 36px!important;
+}
+		}
+	}
+}

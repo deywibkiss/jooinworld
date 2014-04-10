@@ -1,0 +1,109 @@
+#community-wrap .criteria-row{
+	text-align:center;
+}
+#community-wrap .criteria-row > div{
+	display: inline-block;
+	margin: auto;
+	padding: auto;
+	vertical-align: middle;
+}
+
+#community-wrap .criteria-row .delete-row {
+	position: absolute;
+	left: 5px;
+	top: 10px;
+	margin: auto;
+	display: inline-block;
+	vertical-align: middle;
+}
+#community-wrap select, #community-wrap textarea, #community-wrap input[type="text"], #community-wrap input[type="password"], #community-wrap input[type="datetime"], #community-wrap input[type="datetime-local"], #community-wrap input[type="date"], #community-wrap input[type="month"], #community-wrap input[type="time"], #community-wrap input[type="week"], #community-wrap input[type="number"], #community-wrap input[type="email"], #community-wrap input[type="url"], #community-wrap input[type="search"], #community-wrap input[type="tel"], #community-wrap input[type="color"], #community-wrap .uneditable-input {
+	margin:0px 5px 0px;
+	padding:0;
+	vertical-align: middle;
+}
+#community-wrap #criteriaContainer { padding: 0 auto; }
+
+#community-wrap .clearfull * {
+	display: inline-block;
+}
+#community-wrap .clearfull label input{
+	margin-top: -4px;
+}
+#community-wrap .clearfull input[type="submit"]{
+	float:right;
+	margin-right:5px;
+}
+
+/*desde aqui empieza los estilos de la lista de sugerencia de amigos*/
+
+/*el elemento enlace que contiene la img*/
+#community-wrap .cIndex-Box { text-align: center; }
+
+#community-wrap .cIndex-Avatar { margin:62px auto 0 37%; position: relative; }
+
+#community-wrap .cIndex-Avatar img { width:160px; height:160px; }
+
+#community-wrap .cIndex-Content {
+	margin: 0 0 0 79px;
+	min-height: 64px;
+	position: static;
+}
+
+#community-wrap .cIndex-Actions { top: 5px; margin: 0px; }
+#community-wrap .cIndex-Actions > span{ 
+	font-size:16px; 
+	color:#666; 
+	padding: 3px 2px;
+	margin: 0; 
+}
+
+#community-wrap .cIndex-Actions > div:nth-child(-n+2) { display:none; }
+/*#community-wrap .cIndex-Actions div:nth-child(3) > i { display:none; }*/
+
+#community-wrap .cIndex-Actions div:nth-child(5) > a {
+	background-color: #5EAD5E;
+	color: #fff;
+	padding: 5px;
+	width:130px;
+	border-radius: 0px 5px 5px 0px;
+	font-size:14px;
+	letter-spacing:2px;
+	text-align:center;
+	text-decoration:none;
+}
+#community-wrap .cIndex-Actions div:nth-child(5) > a > span { display:none; }
+
+#community-wrap .cIndex-Actions div:nth-child(5) > a:after { content: 'SI'; }
+
+#community-wrap .cIndex-Actions div:nth-child(3) > a {
+	background-color: #CD0000;
+	color: #fff;
+	padding: 5px;
+	width:130px;
+	border-radius: 5px 0px 0px 5px;
+	font-size:14px;
+	letter-spacing:2px;
+	text-align:center;
+	text-decoration:none;
+	cursor:pointer;
+}
+
+#community-wrap .cResetH {
+	display: block;
+	width: 100%;
+	height: auto;
+	position: absolute;
+	padding: 0;
+	margin: 0 auto;
+	line-height: normal;
+	top: 29px;
+	left:0px;
+	z-index: 1;
+}
+#community-wrap .cResetH:before { content:'('; color: #428bca; }
+#community-wrap .cResetH:after { content:')'; color: #428bca; }
+#community-wrap .cIndex-Status { display:none; }
+
+#community-wrap .sugerencias li{ display:none; }
+
+

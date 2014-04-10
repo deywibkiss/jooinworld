@@ -1,0 +1,852 @@
+#textar {
+ height: 36px;
+ width: 90%;
+}
+#jbolo_toolbar {
+ -webkit-box-shadow: inset 2px 0 2px -2px #b2b9c9;
+ border-left: 1px solid rgba(0,0,0,.4);
+ border-top: 1px solid #C9D0DA;
+ bottom: 0;
+ overflow: hidden;
+ right: 0;
+ /*width: 200px;*//*^ manoj*/
+ padding: 5px;/*+ manoj*/
+}
+.J-Kh {
+ margin: 0
+}
+.actionlist {
+ background: white;
+ border: 1px solid #CCC;
+ bottom: 24px;
+ font-size: 11px;
+ padding: 5px;
+ position: absolute;
+ right: 0;
+ z-index: 9;
+}
+.actions {
+ border-left: 1px solid #CCC;
+ border-right: 1px solid #CCC;
+ float: right;
+ position: relative;
+}
+.actions button {
+ background: url(images/fb_icons.png) no-repeat scroll -437px -471px #F2F4F8;
+ border: none;
+ height: 24px;
+ margin: 0;
+ padding: 0;
+ width: 26px;
+}
+.actions button.highlight {
+ background: url(images/fb_icons.png) no-repeat scroll -464px -472px #6D84B4;
+ border-left: 1px solid #3B5998;
+ border-right: 1px solid #3B5998;
+ height: 24px;
+ width: 26px;
+}
+.actions button:hover {
+ background: url(images/fb_icons.png) no-repeat scroll -437px -471px #FFF;
+ height: 24px;
+ width: 26px;
+}
+.activitystream {
+ background: #fff;
+ border: 1px solid #ccc;
+ bottom: 338px;
+ cursor: pointer;
+ display: inline-block;
+ float: right;
+ height: 280px;
+ overflow-x: hidden;
+ overflow-y: auto;
+ padding: 1px;
+ position: fixed;
+ right: 0;
+ text-transform: none!important;
+ width: 197px;
+ z-index: 999;
+}
+.activitystreamopener {
+ background: #fff;
+ border: 1px solid #ccc;
+ bottom: 0;
+ cursor: pointer;
+ display: inline-block;
+ float: left;
+ margin: 5px 5px 0;
+ padding: 1px;
+ position: fixed;
+ text-transform: none!important;
+ z-index: 999;
+}
+.addusers input {
+ border: 1px solid #CCC;
+ font-size: 11px;
+ margin: 5px;
+ outline: 0;
+ padding: 3px;
+ width: 150px;
+}
+.bradcastMsg {
+ color: #777
+}
+.buttons {
+ float: left;
+ margin: 10px 0 0;
+ width: 100%;
+}
+.buttons div {
+ background: whitesmoke;
+ border-bottom: 1px solid #cdcdcd;
+ border-left: 1px solid #cdcdcd;
+ border-top: 1px solid #cdcdcd;
+ float: left;
+ font-size: 11px;
+ padding: 3px;
+ width: auto!important;
+}
+.buttons div.more {
+ border-right: 1px solid #cdcdcd
+}
+.chatactions {
+ background-color: white;
+ border: 1px solid #888;
+ color: #333;
+ font-size: 11px;
+ margin: 0;
+ outline-style: none;
+ overflow: hidden;
+ padding: 0;
+ position: absolute;
+ right: 5px;
+ text-align: left;
+ text-overflow: ellipsis;
+ top: 25px;
+ vertical-align: bottom;
+ width: 150px;
+ z-index: 7;
+}
+.chatactions li {
+ background: white;
+ display: block;
+ line-height: normal;
+ padding: 5px;
+}
+.chatactions li:hover {
+ background: #6D84B4;
+ color: #fff;
+}
+.chatboxtextareaselected {
+ border: 2px solid #f99d39;
+ margin: 0;
+}
+.chatmessages {
+ background: #fff;
+ float: left;
+ height: auto;
+ margin: 5px 0;
+ max-height: 212px;
+ min-height: 150px;
+ overflow-x: hidden;
+ overflow-y: auto;
+ padding: 0 5px;
+ text-align: left;
+ width: 95%;
+}
+.chatmessages .chatavatar {
+ float: left;
+ margin: 3px;
+}
+.chatmessages .chatavatar img {
+ height: 28px;
+ width: 28px;
+}
+.chatmessages .chatdatestamp {
+ color: #777;
+ float: right;
+ font-size: 10px;
+ font-weight: bold;
+ text-align: right;
+ width: 100%;
+}
+.chatmessages .chatmessage {
+ position: relative;
+ top: -2px;
+ word-wrap: break-word;
+}
+.chatmessages .chatuser {
+ font-weight: bold;
+ position: relative;
+ top: -2px;
+}
+.chatmessages .onemsg {
+ float: left;
+ font-size: 12px;
+ font-weight: normal;
+ line-height: 18px;
+ width: 100%;
+}
+.chatmessages .onemsg_chat {
+ margin-left: 40px
+}
+.extstatus {
+ cursor: pointer;
+ float: left;
+ height: 12px;
+ position: relative;
+ vertical-align: top;
+}
+.extstatus button {
+ background: url(images/download.png) no-repeat scroll -80px -120px transparent;
+ border: none;
+ padding: 0;
+}
+.extstatus:hover {
+ background: url(images/arrow_down.png) no-repeat 50% 50% whiteSmoke
+}
+.extstatuslist {
+ background: white;
+ border: 1px solid #CCC;
+ font-size: 11px;
+ padding: 5px;
+ position: absolute;
+ right: 33px;
+ text-align: left;
+ top: 55px;
+ width: 66%;
+ z-index: 99;
+}
+.green .J-N-JX {
+ background: url(images/icons_ns10.png) no-repeat 0 -80px;
+ height: 16px;
+ width: 16px;
+}
+.grey .J-N-JX {
+ background: url(images/icons_ns10.png) no-repeat -60px -80px;
+ height: 16px;
+ width: 16px;
+}
+.inmessages {
+ border-top: 1px solid #C9D0DA;
+ bottom: 0;
+ float: left;
+ position: relative;
+ width: 100%;
+}
+.inmessages textarea {
+ border: 0;
+ height: 25px;
+ margin: 1px;
+ padding: 1px;
+ resize: none;
+ width: 235px!important;
+}
+.jb_smileybox {
+ background: none repeat scroll 0 0 white;
+ border: 1px solid #CCC;
+ bottom: 20px;
+ position: absolute;
+ right: 16px;
+ width: 50px;
+}
+.jb_smileybox table img {
+ margin: 5px!important
+}
+.jb_smileybox table, .jb_smileybox tr, .jb_smileybox td {
+ border: 0!important;
+ margin: 0!important;
+ padding: 0!important;
+}
+.jboloactivity_container {
+ height: 300px;
+ margin-top: 5px;
+ width: 300px;
+}
+.jbolochatwin {
+ bottom: 0;
+ color: #333;
+ font-family: arial,sans-serif;
+ margin: 0 10px;
+ padding: 0;
+ position: fixed;
+ right: 200px;
+ z-index: 999;
+}
+.jbolochatwin .jbolo_container {
+ background: #fff;
+ border: none;
+ display: inline-block;
+ margin: 0 5px!important;
+ vertical-align: bottom;
+ width: 245px;
+}
+.jbolochatwin .jbolo_container .jbolo_container {
+ border-left: 1px solid #ccc;
+ border-right: 1px solid #ccc;
+ margin: 0!important;
+ overflow: hidden;
+ padding: 0!important;
+}
+.jbolochatwin .conthighlight .jbolo_title {
+ background: #6D84B4
+}
+.jbolochatwin .minimise {
+ background: none!important;
+ border: 0!important;
+ height: 25px;
+ margin: 0 auto;
+ width: 220px;
+}
+.jbolochatwin .minimise .conthighlight .jbolo_title:hover {
+ background: #EBEEF4
+}
+.jbolochatwin .minimise .jbolo_title {
+ background: #f6f7f8!important;
+ border: 1px solid rgba(29,49,91,.3);
+ border-bottom: 0;
+ bottom: 0;
+ color: #333;
+ position: absolute;
+ width: 216px;
+}
+.jbolochatwin .minimise .windowfuncs .jbolo_close {
+ background: url(images/download1.png) no-repeat -268px -15px;
+ border: 0;
+ height: 16px;
+ width: 16px;
+}
+.jbolochatwin .minimise .windowfuncs .jbolo_close:hover {
+ background: url(images/download1.png) no-repeat -268px -47px;
+ border: 0;
+ height: 16px;
+ width: 16px;
+}
+.jbolochatwin .statusicon {
+ background: url(images/fb_icons1.png) no-repeat left -200px;
+ float: left;
+ height: 16px;
+ margin: 0 5px;
+ width: 16px;
+}
+.jbolochatwin .statusicon_1 {
+ background: url(images/download1.png) no-repeat 4px -206px;
+ float: left;
+ height: 16px!important;
+ width: 16px!important;
+}
+.jbolochatwin .statusicon_2 {
+ background: url(images/icons_ns10.png)no-repeat -20px -80px;
+ float: left;
+ height: 16px!important;
+ width: 16px!important;
+}
+.jbolochatwin .statusicon_3 {
+ background: url(images/icons_ns10.png) no-repeat scroll -40px -80px transparent;
+ float: left;
+ height: 16px!important;
+ width: 16px!important;
+}
+.jbolochatwin .statusicon_4 {
+ background: url(images/icons_ns10.png) no-repeat scroll -60px -80px transparent;
+ float: left;
+ height: 16px!important;
+ width: 16px!important;
+}
+.jbolochatwin .jbolo_title {
+ background-color: #6d84b4;
+ border: 1px solid rgba(0,39,121,.76);
+ color: white;
+ cursor: pointer;
+ float: left;
+ font-size: 11px;
+ font-weight: bold;
+ margin-left: -1px;
+ padding: 3px 2px 3px 1px;
+ width: 98.5%;
+}
+.jbolochatwin.chatboxtextarea {
+ border: 1px solid #eeeeee;
+ height: 44px;
+ margin: 1px;
+ overflow: hidden;
+ padding: 3px 0 3px 3px;
+ width: 206px;
+}
+.jbolouserlist {
+ -webkit-box-shadow: inset 2px 0 2px -2px #b2b9c9;
+ background: #F2F4F8;
+ border-left: 1px solid rgba(0,0,0,.4);
+ border-top: 1px solid rgba(0,0,0,.4);
+ bottom: 24px;
+ color: #000;
+ display: none;
+ font-family: arial,sans-serif;
+ padding: 0;
+ position: fixed;
+ right: 0;
+ width: 200px;
+ z-index: 999;
+}
+.jbolouserlist .jbolo_title {
+ float: left;
+ font-size: 15px;
+ font-weight: bold;
+ width: 90%;
+}
+.jbolouserlist-in {
+ border: 0 solid #ccc;
+ height: 100%;
+ overflow: hidden;
+ padding: 5px;
+}
+.jbolouserlist-in #loggeduser {
+ /*margin: 0 10px;*/ /*^ manoj*/
+ overflow: hidden;/*+ manoj*/
+}
+.listmore {
+ background: #fff!important;
+ border: 1px solid #CCC;
+ bottom: 35px;
+ left: 80px;
+ padding: 5px;
+ position: absolute;
+}
+.listopener {
+ background: #fff;
+ border: 1px solid #ccc;
+ bottom: 0;
+ cursor: pointer;
+ display: inline-block;
+ float: left;
+ margin: 5px 5px 0;
+ padding: 1px;
+ position: fixed;
+ right: 82px;
+ text-transform: none!important;
+ z-index: 999;
+}
+.listopener div {
+ background: url(images/fb_icons.png) -413px -473px no-repeat #F2F4F8;
+ opacity: 1;
+ padding: 10px;
+}
+.listopener div:active {
+ background: url(images/fb_icons.png) no-repeat scroll -439px -473px;
+ opacity: 0.5;
+ padding: 10px;
+}
+.listopener span, .addusers, div#addsmiley {
+ display: none
+}
+.listopener.highlight {
+ background: #F2F4F8;
+ right: 52px;
+ width: 80px;
+}
+.listopener.highlight div {
+ background: url(images/fb_icons.png) no-repeat scroll -439px -473px;
+ float: left;
+ opacity: 0.5;
+ padding: 10px;
+}
+.listopener.highlight span {
+ display: block;
+ float: left;
+ font-size: 11px;
+ font-weight: normal;
+ line-height: 21px;
+}
+.loggedin-user {
+ font-size: 12px;
+ text-align: left;
+}
+.maxwin {
+ height: 500px;
+ left: 25%;
+ position: absolute;
+ top: 20%;
+ width: 500px;
+}
+.msg_sperator {
+ border-bottom-color: #EDEDED;
+ border-bottom-style: solid;
+ border-bottom-width: 1px;
+ clear: both;
+ margin-bottom: 5px;
+ padding-bottom: 5px;
+}
+.orange .J-N-JX {
+ background: url(images/icons_ns10.png) no-repeat -40px -80px;
+ height: 16px;
+ width: 16px;
+}
+.plist {
+ float: left;
+ font-size: 12px;
+ height: 50px;
+ margin-top: 15px;
+ overflow: auto;
+ text-align: left;
+ width: 100%;
+}
+.red .J-N-JX {
+ background: url(images/icons_ns10.png) no-repeat -20px -80px;
+ height: 16px;
+ width: 16px;
+}
+.searchusers {
+ background: #F2F4F8;
+ border: 0;
+ float: left;
+ /*height: 24px;*/
+ position: relative;
+ /*width: 196px;*//*^ manoj*/
+ width: 100%;
+}
+.searchusers input {
+ /*background: #F2F4F8!important;*//*^ manoj*/
+ border: 0;
+ font-size: 11px;
+ height: 24px;
+ outline: 0;
+ padding: 0 4px;
+ /*width: 186px;*//*^ manoj*/
+ width: 96%;
+}
+.searchusers:hover, .searchusers input:hover, .searchusers input:focus, .searchusers input:active {
+ /*background: #fff;*//*^ manoj*/
+ border: 0;
+}
+.smiley {
+ cursor: pointer
+}
+.status_msg {
+ cursor: pointer;
+ float: left;
+ font-size: 11px;
+ line-height: normal;
+ margin: 3px;
+ overflow: hidden;
+ text-align: left;
+ white-space: nowrap;
+ width: 140px!important;
+}
+.status_msg:hover, .uz:hover {
+ background: #f2f2f2
+}
+.statusicon {
+ background: url(images/fb_icons1.png) no-repeat left -200px;
+ float: right;
+ height: 16px!important;
+ margin: 7px 0;
+ width: 11px!important;
+}
+.statusicon_1 {
+ background: url(images/icons_ns10.png) no-repeat -3px -77px;
+ float: right;
+ height: 23px!important;
+ width: 11px!important;
+}
+.statusicon_2 {
+ background: url(images/icons_ns10.png) no-repeat scroll -23px -80px transparent;
+ float: right;
+ height: 16px!important;
+ width: 11px!important;
+}
+.statusicon_3 {
+ background: url(images/icons_ns10.png) no-repeat scroll -43px -80px transparent;
+ float: right;
+ height: 16px!important;
+ width: 11px!important;
+}
+.statusicon_4 {
+ background: url(images/icons_ns10.png) no-repeat scroll -63px -80px transparent;
+ float: right;
+ height: 16px!important;
+ width: 11px!important;
+}
+.titleHighlight {
+ background: #4d68a2!important
+}
+.titleOriginal {
+ background: #6d84b4
+}
+.jbolo_toolbar.highlight {
+ -webkit-box-shadow: none;
+ background: #F2F4F8;
+ border: 1px solid #ccc!important;
+ right: 20px!important;
+ width: 150px!important;
+}
+.jbolo_toolbar.highlight .actions, img.actions {
+ border: 0
+}
+.jbolo_tools {
+ background-color: #F7F7F7;
+ color: #06C;
+ float: left;
+ position: relative;
+ width: 100%;
+}
+.jbolo_tools .addTicketActivity {
+ background: url(images/addActivity.png) no-repeat;
+ border: 0;
+ cursor: pointer;
+ float: right;
+ height: 20px;
+ margin: 2px;
+ width: 20px;
+}
+.jbolo_tools .addpeople {
+ background: url(images/icons_ns10.png) no-repeat -80px -140px;
+ border: 0;
+ cursor: pointer;
+ height: 20px;
+ width: 20px;
+}
+.jbolo_tools .chatHistory {
+ background: url(images/history.gif) no-repeat;
+ border: 0;
+ cursor: pointer;
+ float: left;
+ height: 20px;
+ margin: 2px;
+ width: 20px;
+}
+.jbolo_tools .clearconversation {
+ background: url(images/clear.png) no-repeat;
+ border: 0;
+ cursor: pointer;
+ height: 20px;
+ margin: 2px;
+ width: 20px;
+}
+.jbolo_tools .leave {
+ background: url(images/leave.png) no-repeat;
+ border: 0;
+ cursor: pointer;
+ float: right;
+ height: 20px;
+ margin: 2px;
+ width: 20px;
+}
+.jbolo_tools .sendfile {
+ background: url(images/sendfile.gif) no-repeat;
+ border: 0;
+ cursor: pointer;
+ float: left;
+ height: 20px;
+ margin: 2px;
+ width: 20px;
+}
+.jbolo_tools .voicecall {
+ background: url(images/icons_ns10.png) no-repeat -18px -118px;
+ border: 0;
+ cursor: pointer;
+ height: 20px;
+ width: 20px;
+}
+.jbolo_tools button {
+ float: left;
+ padding: 3px;
+}
+.tooltip {
+ background: white;
+ border: 1px solid #CCC;
+ height: auto;
+ left: 100px;
+ padding: 5px;
+ position: absolute;
+ width: 200px;
+ z-index: 999;
+}
+.tooltip div div {
+ float: left;
+ line-height: 18px;
+ width: 70%;
+}
+.tooltip div span {
+ width: 70%
+}
+.udetails {
+ background: #EEE;
+ overflow: hidden;
+}
+.ulist {
+ bottom: 0;
+ float: left;
+ font-size: 11px;
+ height: 200px;
+ margin-top: 10px;
+ overflow-x: hidden;
+ overflow-y: scroll;
+ position: relative;
+ width: 100%;
+ padding-left: 5px;/*+ manoj*/
+}
+.uname {
+ float: left;
+ line-height: 18px;
+ margin: 0;
+ overflow: hidden;
+ padding: 0;
+ text-align: left;
+ text-overflow: ellipsis;
+ white-space: nowrap;
+ width: 120px;
+}
+.unamecover {
+ cursor: pointer;
+ float: left;
+ padding: 0;
+ width: 78%;
+}
+.unamecover .status_msg {
+ width: 125px!important
+}
+.updatedstatus {
+ background: whiteSmoke;
+ border: 1px solid #CCC;
+ left: 7px;
+ padding: 5px;
+ position: absolute;
+ top: 55px;
+ z-index: 99;
+}
+.userdetails {
+ float: left;
+ line-height: 18px;
+ width: 100%;
+}
+.userstatus {
+ float: left;
+ width: 100%;
+}
+.userstatus button {
+ background: white;
+ border: none;
+ color: #000!important;
+ display: block;
+ float: left;
+ font-size: 11px;
+ height: 28px;
+ line-height: 20px;
+ margin: 3px;
+ padding: 5px 8px;
+ text-transform: none!important;
+ width: auto;
+}
+.userstatus:hover {
+ border: none;
+ display: block;
+}
+.userstatusicon {
+ float: left;
+ font-size: 11px;
+ font-weight: bold;
+}
+.userstatusicon div {
+ background: url(images/fb_icons1.png) no-repeat left -200px;
+ float: left;
+ height: 15px;
+ width: 20px!important;
+}
+.uw {
+ float: left;
+ height: 100%;
+ width: 16px;
+}
+.uw .J-N-JX {
+ top: auto;
+ vertical-align: baseline;
+}
+.uz {
+ cursor: pointer;
+ line-height: 18px;
+}
+.windowfuncs {
+ float: right;
+ text-align: right;
+ white-space: nowrap;
+}
+.windowfuncs .chatacts {
+ background: url(images/fb_icons.png) no-repeat -469px -475px;
+ border: 0;
+ height: 16px;
+ width: 16px;
+}
+.windowfuncs .chatacts span {
+ margin: 0 8px
+}
+.windowfuncs .jbolo_close {
+ background: url(images/download1.png) no-repeat -95px -335px;
+ border: 0;
+ cursor: pointer;
+ height: 16px;
+ width: 16px;
+}
+.windowfuncs .jbolo_close:hover {
+ background: url(images/download1.png) no-repeat -73px -335px;
+ border: 0;
+ height: 16px;
+ width: 16px;
+}
+.windowfuncs .jbolo_mini {
+ background: url(images/download.png) no-repeat -20px -80px;
+ border: 0;
+ display: none;
+ height: 16px;
+ width: 16px;
+}
+.windowfuncs .popout {
+ background: url(images/download.png) no-repeat -120px -80px;
+ border: 0;
+ height: 16px;
+ width: 16px;
+}
+button.smiley {
+ background: no-repeat url(images/download1.png) -285px -15px;
+ border: 0;
+ cursor: pointer;
+ height: 25px;
+ width: 24px;
+}
+div.jbolo_avatar {
+ cursor: pointer;
+ float: left;
+ margin: 3px;
+}
+div.jbolo_avatar img {
+ /*max-height: 28px!important;
+ max-width: 28px!important;*/ /*^ manoj*/
+ height: 28px!important;
+ width: 28px!important;
+}
+div.smiley {
+ bottom: 2px;
+ position: absolute;
+ right: 12px;
+ z-index: 999;
+}
+img.userstatus, img.extstatus {
+ background: url(images/download.png) no-repeat scroll -80px -120px transparent;
+ float: left;
+ height: 12px;
+ position: relative;
+ vertical-align: top;
+ width: 12px;
+}
+span.uname {
+ display: block
+}
+span.uname, span.uemail {
+ float: left;
+ font-size: 11px;
+ line-height: normal;
+ margin: 3px;
+ padding: 0;
+ text-align: left;
+ width: 88%;
+}

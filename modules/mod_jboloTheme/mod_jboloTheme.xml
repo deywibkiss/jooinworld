@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="module" method="upgrade" client="site">
+
+	<name>JBolo! Theme</name>
+
+	<author>TechJoomla</author>
+	<authorEmail>extensions@techjoomla.com</authorEmail>
+	<authorUrl>www.techjoomla.com</authorUrl>
+	<copyright>Copyright(C)2012-13 TechJoomla</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<creationDate>1st Jul 2013</creationDate>
+	<version>3.0.1</version>
+
+	<description>This module lets users choose chat theme.</description>
+
+	<files>
+		<filename>mod_jboloTheme.xml</filename>
+		<filename module="mod_jboloTheme">mod_jboloTheme.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="moduleclass_sfx" type="text" label="Module class suffix" default="" description="Module class suffix" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,161 @@
+.juanimation > div {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+.juanimation .title {
+    background: none repeat scroll 0 0 #F5F5F5;
+    clear: both;
+	cursor: auto !important;
+    display: block;
+	position: relative;
+    font-weight: bold;
+    margin: 5px 0 !important;
+    padding: 5px !important;
+    text-transform: uppercase;
+	background: #dbedff;
+	background-image: linear-gradient(bottom, #dbedff 0%, #f2f9ff 100%);
+	background-image: -o-linear-gradient(bottom, #dbedff 0%, #f2f9ff 100%);
+	background-image: -moz-linear-gradient(bottom, #dbedff 0%, #f2f9ff 100%);
+	background-image: -webkit-linear-gradient(bottom, #dbedff 0%, #f2f9ff 100%);
+	background-image: -ms-linear-gradient(bottom, #dbedff 0%, #f2f9ff 100%);
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #dbedff),color-stop(1, #f2f9ff));
+    border-bottom: 1px solid #97bade;
+	border-top: 1px solid #97bade;
+	color: #444444;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.juanimation .clone {
+	display: none;
+}
+
+.juanimation .config {
+    clear: both;
+    display: inline-block;
+    margin: 5px 0 10px;
+    position: relative;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.animation-timeline .config {
+    border: 1px dashed #DDDDDD;
+    display: inline-block;
+    padding: 10px 10px 20px;
+}
+
+.juanimation .config input, .juanimation .config select{
+    margin: 0 5px 9px 0;
+    padding: 4px 6px;
+}
+
+.juanimation .config textarea{
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.juanimation .addtimeline{
+    background: url("../images/add-icon.png") no-repeat scroll center center transparent;
+    cursor: pointer;
+    height: 16px;
+    padding: 4px;
+    position: absolute;
+    right: 4px;
+    text-indent: -9999em;
+    top: 6px;
+    width: 16px;
+}
+
+.juanimation .removetimeline{
+    background: url("../images/delete-icon.png") no-repeat scroll center center transparent;
+    cursor: pointer;
+    height: 16px;
+    padding: 4px;
+    position: absolute;
+    right: 4px;
+    text-indent: -9999em;
+    top: 6px;
+    width: 16px;
+}
+
+.juanimation .insertbeforetimeline{
+    background: url("../images/insertbefore-icon.png") no-repeat scroll center center transparent;
+    cursor: pointer;
+    height: 16px;
+    padding: 4px;
+    position: absolute;
+    right: 28px;
+    text-indent: -9999em;
+    top: 6px;
+    width: 16px;
+}
+
+.juanimation .insertaftertimeline{
+    background: url("../images/insertafter-icon.png") no-repeat scroll center center transparent;
+    cursor: pointer;
+    height: 16px;
+    padding: 4px;
+    position: absolute;
+    right: 28px;
+    text-indent: -9999em;
+    bottom: 0px;
+    width: 16px;
+}
+
+.juanimation .action{
+	opacity: 0.75;
+}
+
+.juanimation .action:hover{
+	opacity: 1;
+}
+
+.juanimation .clearshowto, .juanimation .clearhideto{
+    background: url("../images/clear-icon.png") no-repeat scroll center center transparent;
+    cursor: pointer;
+    height: 16px;
+    padding: 4px;
+    position: absolute;
+    right: 4px;
+    text-indent: -9999em;
+    top: 6px;
+    width: 16px;
+}
+
+.juanimation .animation-code textarea{
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.juanimation .gototop, .juanimation .gotogallery {
+    background: none repeat scroll 0 0 #F0F0F0;
+    border: 1px solid #DDDDDD;
+    bottom: 15px;
+    cursor: pointer;
+    padding: 3px 8px;
+    position: absolute;
+    right: 0;
+}
+
+.juanimation .gotogallery{
+	right: 45px;
+}
+
+.juanimation .gotoanimationcode {
+    cursor: pointer;
+    padding: 5px;
+    position: absolute;
+    right: 0;
+    top: 6px;
+}

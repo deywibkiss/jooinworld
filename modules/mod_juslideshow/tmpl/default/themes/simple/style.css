@@ -1,0 +1,161 @@
+.ju-slideshow.default-simple {
+}
+
+.default-simple .ju-slide-container {
+}
+
+.default-simple .ju-slide-desc {
+	background: none repeat scroll 0% 0% #FFFFFF;
+	color: #313131;
+	left: 30px;
+	bottom: 25%;
+	width: 350px;
+	height: auto;
+	max-height: 210px;
+}
+
+.default-simple .ju-slide-desc .label-title {
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	line-height: 1;
+	font-size: 20px;
+}
+
+.default-simple .ju-slide-desc .label-desc {
+	font-size: 14px;
+	line-height: 1.6;
+	font-weight: normal;
+	margin-bottom: 10px;
+}
+
+.default-simple .ju-slide-desc a.readmore {
+	border: medium none;
+	color: #BC1F18;
+	padding-left: 20px;
+	background: url("images/readmore.png") no-repeat scroll left center transparent;
+	font-size: 12px;
+	line-height: 20px;
+}
+
+.default-simple .ju-slide-btns .prev_button, .default-simple .ju-slide-btns .next_button {
+	height: 37px;
+	width: 37px;
+	top: auto;
+	background-image: url("images/direction_btn.png");
+	background-repeat: no-repeat;
+	bottom: 25%;
+	margin-bottom: -38px;
+}
+
+.default-simple .prev_button {
+	left: 30px;
+}
+
+.default-simple .next_button {
+	background-position: right center;
+	left: 68px;
+}
+
+.default-simple .ju-slide-btns .focus_button, .default-simple .ju-slide-btns .play_pause_button {
+	background-repeat: no-repeat;
+	background-image: url("images/function_btn.png");
+	height: 25px;
+	width: 25px;
+	margin-top: -12px;
+	margin-bottom: -12px;
+}
+
+.default-simple .ju-slide-btns .focus_button {
+	background-position: -52px 0px;
+	margin-left: 2px;
+	margin-right: -2px;
+}
+
+.default-simple .ju-slide-btns .play_pause_button {
+	background-position: -26px center;
+	margin-left: -2px;
+	margin-right: 2px;
+}
+
+.default-simple .ju-slide-btns .play_button {
+	background-position: 0px center;
+}
+
+.default-simple .focus_button.fc_btn_center {
+	margin-left: 3px;
+}
+
+.default-simple .play_pause_button.pp_btn_center {
+	margin-left: -30px;
+}
+
+.default-simple .ju-slide-navigation {
+	background: url("images/thumb_bg.png") repeat scroll 0% 0% transparent;
+}
+
+.default-simple .ju-slide-navigation-dots {
+	margin: 2px 5px;
+}
+
+.default-simple .ju-slide-navigation-dots .image_number {
+	background: url("images/dot.png") no-repeat scroll center center transparent;
+	margin: 0px 2px;
+}
+
+.default-simple .ju-slide-navigation-dots .image_number_select {
+	background: url("images/dot-active.png") no-repeat scroll center center transparent;
+}
+
+.default-simple .ju-slide-navigation-numbers {
+	top: auto;
+	bottom: 15px;
+	margin: 0px 15px;
+	border-radius: 0px 0px 0px 0px;
+	-webkit-border-radius: 0px 0px 0px 0px;
+}
+
+.default-simple .ju-slide-thumb-navigation .image_number {
+	border: 1px solid #CCCCCC;
+	background: none repeat scroll 0px 0px #FFFFFF;
+}
+
+.default-simple .ju-slide-navigation-numbers .image_number {
+	border-radius: 0px 0px 0px 0px;
+	-webkit-border-radius: 0px 0px 0px 0px;
+	margin: 0px 1px;
+}
+
+.default-simple .ju-slide-thumb-navigation .image_number_select {
+	background: none repeat scroll 0% 0% #A40201;
+	opacity: 0.9;
+}
+
+.default-simple .horizontal_thumbs {
+	bottom: 10px;
+}
+
+.default-simple .vertical_thumbs {
+	right: 10px;
+}
+
+.default-simple .progressbar {
+	background: url("images/thumb_bg.png") repeat scroll 0px 0px transparent;
+	left: 0px;
+	border-radius: 0px 0px 0px 0px;
+	-webkit-border-radius: 0px 0px 0px 0px;
+	bottom: 0px;
+	top: auto;
+	width: 100%;
+}
+
+.default-simple .ju-slide-desc.label-hide .label-title {
+	margin-left: -500px;
+	transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.4s ease 0s;
+}
+
+.default-simple .ju-slide-desc.label-show .label-title {
+	margin-left: 0;
+	transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.4s ease 0s;
+}

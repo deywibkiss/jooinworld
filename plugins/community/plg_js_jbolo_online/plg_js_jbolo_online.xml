@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0"  type="plugin" group="community" method="upgrade">
+
+	<name>plg_js_jbolo_online</name>
+
+	<author>TechJoomla</author>
+	<authorEmail>extensions@techjoomla.com</authorEmail>
+	<authorUrl>www.techjoomla.com</authorUrl>
+	<copyright>Copyright(C)2012-13 TechJoomla</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+
+	<creationDate>1st Jul 2013</creationDate>
+	<version>3.0.1</version>
+
+	<isapplication>true</isapplication>
+
+	<description>PLG_PLG_JS_JBOLO_ONLINE_DESC</description>
+
+	<files>
+		<file plugin="plg_js_jbolo_online">plg_js_jbolo_online.php</file>
+		<folder>plg_js_jbolo_online</folder>
+		<filename>index.html</filename>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_community_plg_js_jbolo_online.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_community_plg_js_jbolo_online.sys.ini</language>
+  	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			<field name="cache" type="list" default="0" label="PLG_PLG_JS_JBOLO_CACHING_LBL" description="PLG_PLG_JS_JBOLO_CACHING_DESC">
+					<option value="1">PLG_PLG_JS_JBOLO_YES</option>
+					<option value="0">PLG_PLG_JS_JBOLO_NO</option>
+				</field>
+				<field name="coreapp" type="list" default="0" label="PLG_PLG_JS_JBOLO_CORE_LBL" description="PLG_PLG_JS_JBOLO_CORE_DESC">
+					<option value="0">PLG_PLG_JS_JBOLO_NO</option>
+					<option value="1">PLG_PLG_JS_JBOLO_YES</option>
+				</field>
+				<field name="position" type="list" default="content" label="PLG_PLG_JS_JBOLO_POSITION_LBL" description="PLG_PLG_JS_JBOLO_POSITION_LBL">
+					<option value="content">Main content</option>
+					<option value="sidebar-top">Sidebar top</option>
+					<option value="sidebar-bottom">Sidebar bottom</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

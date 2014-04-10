@@ -1,0 +1,35 @@
+/* Large desktop */
+@media (min-width: 1200px) {
+
+}
+
+/* Landscape tablet to desktop */
+@media (min-width: 980px) and (max-width: 1199px) {
+
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+
+}
+
+/* Landscape phones to portrait phones */
+@media (max-width: 480px) {
+	.default-modal .ju-slide-btns .prev_button, .default-modal .ju-slide-btns .next_button {
+		display: none ! important;
+	}
+	
+	.default-modal .ju-slide-navigation-dots .image_number {
+		margin: 0 2px;
+	}
+}
+
+/* Portrait phones and down */
+@media (max-width: 320px) {
+
+}

@@ -1,0 +1,333 @@
+/*
+	JU Slideshow Custom Animation
+	We use 3 css classes in an animation
+	Show: 		.show-from -> .show-to
+	Timeline: 	.timeline1 -> .timeline2 	->...
+	Hide: 		.show-to   -> .hide-to 		-> .hide-complete
+	All css property need to set !important, so it can overwrite all other css, even style="..." once it's set
+	animation-in|out-delay-duration-easing
+	timeline-delay-newclass-duration-easing
+*/
+
+
+/*--------------- Label Element Animation ---------------*/
+
+/* An Element Animation example */
+/*
+.ju-slideshow .ju-slide-desc .label-title.show-from {
+	transform: scale(0.2, 0.2) !important;
+	-ms-transform: scale(0.2, 0.2) !important;
+	-webkit-transform: scale(0.2, 0.2) !important;
+}
+
+.ju-slideshow .ju-slide-desc .label-title.show-to {
+	transform: rotate(0deg) scale(1, 1) !important;
+	-ms-transform: rotate(0deg) scale(1, 1) !important;
+	-webkit-transform: rotate(0deg) scale(1, 1) !important;
+}
+
+.ju-slideshow .ju-slide-desc .label-title.hide-to {
+	transform: rotate(180deg) scale(0.2, 0.2) !important;
+	-ms-transform: rotate(180deg) scale(0.2, 0.2) !important;
+	-webkit-transform: rotate(180deg) scale(0.2, 0.2) !important;
+}
+*/
+
+/*
+* Title
+*/
+.ju-slideshow .ju-slide-desc .label-title.show-from {
+}
+
+.ju-slideshow .ju-slide-desc .label-title.show-to {
+}
+
+.ju-slideshow .ju-slide-desc .label-title.hide-to {
+}
+
+/*
+* Description
+*/
+.ju-slideshow .ju-slide-desc .label-desc.show-from {
+}
+
+.ju-slideshow .ju-slide-desc .label-desc.show-to {
+}
+
+.ju-slideshow .ju-slide-desc .label-desc.hide-to {
+}
+
+/*
+* Readmore
+*/
+.ju-slideshow .ju-slide-desc .label-readmore.show-from {
+}
+
+.ju-slideshow .ju-slide-desc .label-readmore.show-to {
+}
+
+.ju-slideshow .ju-slide-desc .label-readmore.hide-to {
+}
+
+
+
+/*--------------- Element Animation ---------------*/
+
+/*
+* Left to right animation
+*/
+.ju-slideshow .lefttoright {
+	position: absolute !important;
+	white-space: nowrap;
+}
+
+.ju-slideshow .lefttoright.show-from {
+	right: 100% !important;
+}
+
+.ju-slideshow .lefttoright.show-to {
+	left: auto !important;
+	white-space: normal !important;
+}
+
+.ju-slideshow .lefttoright.hide-to {
+	right: 100% !important;
+}
+
+/*
+* Left to right animation - CSS3
+*/
+.ju-slideshow .lefttoright-css3 {
+}
+
+.ju-slideshow .lefttoright-css3.show-from {
+	transform: translateX(-100%) !important;
+}
+
+.ju-slideshow .lefttoright-css3.show-to {
+	transform: translateX(0px) !important;
+}
+
+.ju-slideshow .lefttoright-css3.hide-to {
+	transform: translateX(-100%) !important;
+}
+
+/*
+* Right to left animation
+*/
+.ju-slideshow .righttoleft {
+	position: absolute !important;
+	white-space: nowrap;
+}
+
+.ju-slideshow .righttoleft.show-from {
+	left: 100% !important;
+}
+
+.ju-slideshow .righttoleft.show-to {
+	left: auto !important;
+	white-space: normal !important;
+}
+
+.ju-slideshow .righttoleft.hide-to {
+	left: 100% !important;
+}
+
+/*
+* Right to left animation - CSS3
+*/
+.ju-slideshow .righttoleft-css3 {
+}
+
+.ju-slideshow .righttoleft-css3.show-from {
+	transform: translateX(100%) !important;
+}
+
+.ju-slideshow .righttoleft-css3.show-to {
+	transform: translateX(0px) !important;
+}
+
+.ju-slideshow .righttoleft-css3.hide-to {
+	transform: translateX(100%) !important;
+}
+
+/*
+* Top to bottom animation
+*/
+.ju-slideshow .toptobottom {
+	position: absolute !important;
+}
+
+.ju-slideshow .toptobottom.show-from {
+	top: -100% !important;
+}
+
+.ju-slideshow .toptobottom.show-to {
+	top: auto !important;
+}
+
+.ju-slideshow .toptobottom.hide-to {
+	top: -100% !important;
+}
+
+/*
+* Top to bottom animation - CSS3
+*/
+.ju-slideshow .toptobottom-css3 {
+}
+
+.ju-slideshow .toptobottom-css3.show-from {
+	transform: translateY(-100%) !important;
+}
+
+.ju-slideshow .toptobottom-css3.show-to {
+	transform: translateY(0px) !important;
+}
+
+.ju-slideshow .toptobottom-css3.hide-to {
+	transform: translateY(-100%) !important;
+}
+
+/*
+* Bottom to top animation
+*/
+.ju-slideshow .bottomtotop {
+	position: absolute !important;
+}
+
+.ju-slideshow .bottomtotop.show-from {
+	top: 100% !important;
+}
+
+.ju-slideshow .bottomtotop.show-to {
+	top: auto !important;
+}
+
+.ju-slideshow .bottomtotop.hide-to {
+	top: 100% !important;
+}
+
+/*
+* Top to bottom animation - CSS3
+*/
+.ju-slideshow .bottomtotop-css3 {
+}
+
+.ju-slideshow .bottomtotop-css3.show-from {
+	transform: translateY(100%) !important;
+}
+
+.ju-slideshow .bottomtotop-css3.show-to {
+	transform: translateY(0px) !important;
+}
+
+.ju-slideshow .bottomtotop-css3.hide-to {
+	transform: translateY(100%) !important;
+}
+
+/*
+* Fade
+*/
+.ju-slideshow .fade {
+}
+
+.ju-slideshow .fade.show-from {
+	opacity: 0 !important;
+}
+
+.ju-slideshow .fade.show-to {
+	opacity: 1 !important;
+}
+
+.ju-slideshow .fade.hide-to {
+	opacity: 0 !important;
+}
+
+/*
+* Zoom in
+*/
+.ju-slideshow .zoom-in {
+}
+
+.ju-slideshow .zoom-in.show-from {
+	transform: scale(0.2, 0.2) !important;
+	-ms-transform: scale(0.2, 0.2) !important;
+	-webkit-transform: scale(0.2, 0.2) !important;
+}
+
+.ju-slideshow .zoom-in.show-to {
+	transform: rotate(0deg) scale(1, 1) !important;
+	-ms-transform: rotate(0deg) scale(1, 1) !important;
+	-webkit-transform: rotate(0deg) scale(1, 1) !important;
+}
+
+.ju-slideshow .zoom-in.hide-to {
+	transform: scale(1.3, 1.3) !important;
+	-ms-transform: scale(1.3, 1.3) !important;
+	-webkit-transform: scale(1.3, 1.3) !important;
+}
+
+/*
+* Zoom out
+*/
+.ju-slideshow .zoom-out {
+}
+
+.ju-slideshow .zoom-out.show-from {
+	transform: scale(1.3, 1.3) !important;
+	-ms-transform: scale(1.3, 1.3) !important;
+	-webkit-transform: scale(1.3, 1.3) !important;
+}
+
+.ju-slideshow .zoom-out.show-to {
+	transform: rotate(0deg) scale(1, 1) !important;
+	-ms-transform: rotate(0deg) scale(1, 1) !important;
+	-webkit-transform: rotate(0deg) scale(1, 1) !important;
+}
+
+.ju-slideshow .zoom-out.hide-to {
+	transform: scale(0.2, 0.2) !important;
+	-ms-transform: scale(0.2, 0.2) !important;
+	-webkit-transform: scale(0.2, 0.2) !important;
+}
+
+/*
+* Rotate
+*/
+.ju-slideshow .rotate {
+}
+
+.ju-slideshow .rotate.show-from {
+	transform: rotate(180deg) !important;
+	-ms-transform: rotate(180deg) !important;
+	-webkit-transform: rotate(180deg) !important;
+}
+
+.ju-slideshow .rotate.show-to {
+	transform: rotate(0deg) !important;
+	-ms-transform: rotate(0deg) !important;
+	-webkit-transform: rotate(0deg) !important;
+}
+
+.ju-slideshow .rotate.hide-to {
+	transform: rotate(150deg) !important;
+	-ms-transform: rotate(150deg) !important;
+	-webkit-transform: rotate(150deg) !important;
+}
+
+/*------------------------------------*/
+
+.ju-slideshow .hide-complete {
+	width: 0 !important;
+	height: 0 !important;
+	opacity: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+}
+
+.ju-slideshow .hide-complete[class~="animation"] {
+	display: none !important;
+}
+
+/*------------- End-Element Animation -----------*/

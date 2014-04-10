@@ -1,0 +1,21 @@
+/**
+ * @package		JBolo
+ * @version		$versionID$
+ * @author		TechJoomla
+ * @author mail	extensions@techjoomla.com
+ * @website		http://techjoomla.com
+ * @copyright	Copyright © 2009-2013 TechJoomla. All rights reserved.
+ * @license		GNU General Public License version 2, or later
+*/
+
+.icon-48-jbolo {
+	background-image:url(../images/jbolo.png)!important;
+}
+/*START custom elements style*/
+.jbolo_div_outer{
+	clear:both;float:left;background-color:#AED300;width:100%;
+}
+.jbolo_div_inner{
+	padding: 5px 5px;font-weight:bold;color:black;
+}
+/*END custom elements style*/

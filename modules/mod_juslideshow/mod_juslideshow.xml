@@ -1,0 +1,1948 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="2.5"
+	client="site"
+	method="upgrade">
+	<name>JU Slideshow</name>
+	<author>JoomUltra</author>
+	<creationDate>Aug 2013</creationDate>
+	<copyright>Copyright (C) 2010 - 2013 JoomUltra. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>admin@joomultra.com</authorEmail>
+	<authorUrl>www.joomultra.com</authorUrl>
+	<version>3.1.1</version>
+	<description>
+		<![CDATA[
+		<div style='font-weight: normal'>
+		<h2 style='color: #0A71A5;'>JU Slideshow Module</strong></h2>
+		<span style='color: #ff0000;'><strong>Features:</strong></span>
+		<br/>
+		Displays Articles/K2 items/EasyBlog entries/Images as slideshow. Allows to create custom themes, 38 beautiful animation effects, many powerful functions and auto image resizing system with many image filters...
+		<br/><br/>
+		<strong><span style='color: #ff0000;'>Usage Instructions:</span></strong><br />
+		Requirements: Joomla! 2.5.x, Joomla! 3.x<br/>
+		This module require jQuery javascript library to work. If jQuery has not been loaded on your site, you should install <b>Plugin JU Load jQuery</b>.
+		<br /><br />
+		<strong><span style='color: #ff0000;'>Upgrade Methods:</span><br /></strong>
+		<ol>
+		  <li>Standard joomla uninstall / reinstall method. Module supports upgrade method. </li>
+		  <li>You can install new version directly over this version. Uninstallation is not required. </li>
+		  <li>Backup any customized file before upgrading.</li>
+		</ol>
+		<br />
+		<strong><span style='color: #ff0000;'>Support:</span></strong>
+		<br />
+		<ul>
+		<li>If you need any help, please ask in <a href="http://www.joomultra.com/forums.html" title="JoomUltra Forum">our forum</a>.</li>
+		<li>If you use JU Slideshow, please post a review for <a href="http://extensions.joomla.org/extensions/photos-a-images/slideshow/image-jquery-slideshow/22718" target="_blank" title="Post a review for JU Slideshow">JU Slideshow on JED</a></li>
+		</ul>
+		<br /><br />
+		<small>Copyright © 2010 - 2013 <a href='http://www.joomultra.com/' title='Visit JoomUltra.com!'>JoomUltra.com</a>.</small>
+		</div>
+		]]>
+	</description>
+	<files>
+		<filename module="mod_juslideshow">mod_juslideshow.php</filename>
+		<folder>admin</folder>
+		<folder>assets</folder>
+		<folder>profiles</folder>
+		<folder>timthumb</folder>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_juslideshow.xml</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_juslideshow.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/modules/mod_juslideshow/admin/elements/">
+				<field 
+					name="juformstyle" 
+					type="juformstyle" />
+					
+				<field 
+					name="jurequest"
+					type="jurequest" />
+					
+				<field 
+					name="profile" 
+					type="juprofile" 
+					label="MOD_JUSLIDESHOW_PROFILE" 
+					description="MOD_JUSLIDESHOW_PROFILE_DESC" />
+					
+				<field 
+					name="layout" 
+					type="julayout" 
+					label="MOD_JUSLIDESHOW_LAYOUT" 
+					description="MOD_JUSLIDESHOW_LAYOUT_DESC"/>
+					
+				<field 
+					name="layoutsettings" 
+					type="julayoutsettings" 
+					filter="raw"
+					class="noprofile"
+					label="MOD_JUSLIDESHOW_LAYOUT_SETTINGS" 
+					description="MOD_JUSLIDESHOW_LAYOUT_SETTINGS_DESC"/>
+				
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				
+				<field 
+					type="jugroup" 
+					name="content_settings" 
+					title="MOD_JUSLIDESHOW_CONTENT_SETTINGS" />
+				
+				<field 
+					name="source_selection" 
+					type="list" 
+					default="0" 
+					class="jufilter" 
+					label="MOD_JUSLIDESHOW_SOURCE_SELECTION" 
+					description="MOD_JUSLIDESHOW_SOURCE_SELECTION_DESC">
+					<option 
+						value="0">MOD_JUSLIDESHOW_SOURCE_SELECTION_CAT</option>
+					<option 
+						value="1">MOD_JUSLIDESHOW_SOURCE_SELECTION_ART</option>
+					<option 
+						value="2">MOD_JUSLIDESHOW_SOURCE_SELECTION_K2</option>
+					<option 
+						value="3">MOD_JUSLIDESHOW_SOURCE_SELECTION_K2_ITEMS</option>
+					<option 
+						value="4">MOD_JUSLIDESHOW_SOURCE_SELECTION_IMAGES_FOLDER</option>
+					<option 
+						value="5">MOD_JUSLIDESHOW_SOURCE_SELECTION_EASYBLOG_CAT</option>
+					<option 
+						value="6">MOD_JUSLIDESHOW_SOURCE_SELECTION_EASYBLOG_ENTRIES</option>
+				</field>
+
+				<field 
+					name="source_cat" 
+					type="category" 
+					extension="com_content" 
+					multiple="true" 
+					size="10" 
+					class="jufilter-source_selection-0" 
+					label="MOD_JUSLIDESHOW_SOURCE_CAT" 
+					description="MOD_JUSLIDESHOW_SOURCE_CAT_DESC" >
+					<option 
+						value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
+
+				<field 
+					name="source_art" 
+					type="text" 
+					default="" 
+					size="25" 
+					class="jufilter-source_selection-1" 
+					label="MOD_JUSLIDESHOW_SOURCE_ART" 
+					description="MOD_JUSLIDESHOW_SOURCE_ART_DESC" />
+				
+				<field 
+					name="source_k2cat" 
+					type="k2categoriesmultiple" 
+					class="jufilter-source_selection-2" 
+					default="" 
+					label="MOD_JUSLIDESHOW_SOURCE_K2_CAT" 
+					description="MOD_JUSLIDESHOW_SOURCE_K2_CAT_DESC" />
+				
+				<field 
+					name="source_itm" 
+					type="text" 
+					default="" 
+					size="25" 
+					class="jufilter-source_selection-3" 
+					label="MOD_JUSLIDESHOW_SOURCE_K2_ITM" 
+					description="MOD_JUSLIDESHOW_SOURCE_K2_ITM_DESC" />
+				
+				<field 
+					name="source_easyblogcat" 
+					type="easyblogcategories" 
+					multiple="true"
+					class="jufilter-source_selection-5" 
+					default="" 
+					label="MOD_JUSLIDESHOW_SOURCE_EASYBLOG_CAT" 
+					description="MOD_JUSLIDESHOW_SOURCE_EASYBLOG_CAT_DESC" />
+				
+				<field 
+					name="source_easyblogent" 
+					type="text" 
+					default="" 
+					size="25" 
+					class="jufilter-source_selection-6" 
+					label="MOD_JUSLIDESHOW_EASYBLOG_ENTRIES" 
+					description="MOD_JUSLIDESHOW_EASYBLOG_ENTRIES_DESC" />
+
+				<field 
+					name="tags_k2" 
+					type="k2tags" 
+					multiple="true" 
+					class="jufilter-source_selection-2" 
+					label="MOD_JUSLIDESHOW_K2_TAGS" 
+					description="MOD_JUSLIDESHOW_K2_TAGS_DESC" />
+
+				<field 
+					name="tags_easyblog" 
+					type="easyblogtags" 
+					multiple="true" 
+					class="jufilter-source_selection-5" 
+					label="MOD_JUSLIDESHOW_EASYBLOG_TAGS" 
+					description="MOD_JUSLIDESHOW_EASYBLOG_TAGS_DESC" />
+
+				<field 
+					name="date_filtering" 
+					type="list" 
+					default="disable" 
+					class="jufilter jufilter-source_selection-0-2-5" 
+					label="MOD_JUSLIDESHOW_DATE_FILTERING" 
+					description="MOD_JUSLIDESHOW_DATE_FILTERING_DESC">
+					<option 
+						value="disabled">MOD_JUSLIDESHOW_DATE_FILTERING_DISABLED</option>
+					<option 
+						value="today">MOD_JUSLIDESHOW_DATE_FILTERING_TODAY</option>
+					<option 
+						value="this_week">MOD_JUSLIDESHOW_DATE_FILTERING_THISWEEK</option>
+					<option 
+						value="this_month">MOD_JUSLIDESHOW_DATE_FILTERING_THISMONTH</option>
+					<option 
+						value="this_year">MOD_JUSLIDESHOW_DATE_FILTERING_THISYEAR</option>
+					<option 
+						value="range">MOD_JUSLIDESHOW_DATE_FILTERING_RANGE</option>
+					<option 
+						value="relative">MOD_JUSLIDESHOW_DATE_FILTERING_RELATIVE</option>
+				</field>
+				
+				<field 
+					name="date_range_start" 
+					type="calendar" 
+					format="%Y-%m-%d 00:00" 
+					size="22" filter="user_utc" 
+					class="jufilter-date_filtering-range jufilter-source_selection-0-2-5" 
+					label="MOD_JUSLIDESHOW_DATE_RANGE_START" 
+					description="MOD_JUSLIDESHOW_DATE_RANGE_START_DESC" />
+					
+				<field 
+					name="date_range_end" 
+					type="calendar" 
+					format="%Y-%m-%d 00:00" 
+					size="22" 
+					filter="user_utc" 
+					class="jufilter-date_filtering-range jufilter-source_selection-0-2-5" 
+					label="MOD_JUSLIDESHOW_DATE_RANGE_END" 
+					description="MOD_JUSLIDESHOW_DATE_RANGE_END_DESC" />
+					
+				<field 
+					name="date_range_from" 
+					type="text" 
+					filter="integer"
+					class="jufilter-date_filtering-relative jufilter-source_selection-0-2-5 validate-numeric" 
+					label="MOD_JUSLIDESHOW_DATE_RANGE_FROM" 
+					description="MOD_JUSLIDESHOW_DATE_RANGE_FROM_DESC" />
+					
+				<field 
+					name="date_range_to" 
+					type="text" 
+					filter="integer"
+					class="jufilter-date_filtering-relative jufilter-source_selection-0-2-5 validate-numeric" 
+					label="MOD_JUSLIDESHOW_DATE_RANGE_TO" 
+					description="MOD_JUSLIDESHOW_DATE_RANGE_TO_DESC" />
+					
+				<field 
+					name="date_type" 
+					type="list" 
+					default="created" 
+					class="jufilter-source_selection-0-2-5" 
+					label="MOD_JUSLIDESHOW_DATE_TYPE" 
+					description="MOD_JUSLIDESHOW_DATE_TYPE_DESC">
+					<option 
+						value="created">MOD_JUSLIDESHOW_DATE_TYPE_CREATED</option>
+					<option 
+						value="modified">MOD_JUSLIDESHOW_DATE_TYPE_MODIFIED</option>
+					<option 
+						value="publish_up">MOD_JUSLIDESHOW_DATE_TYPE_PUBLISH</option>
+				</field>
+				
+				<field 
+					name="exclude_art" 
+					type="text" 
+					default="" 
+					size="25" 
+					class="jufilter-source_selection-0" 
+					label="MOD_JUSLIDESHOW_EXCLUDE_ART" 
+					description="MOD_JUSLIDESHOW_EXCLUDE_ART_DESC" />
+
+				<field 
+					name="exclude_itm" 
+					type="text" 
+					default="" 
+					size="25" 
+					class="jufilter-source_selection-2" 
+					label="MOD_JUSLIDESHOW_EXCLUDE_K2_ITEM" 
+					description="MOD_JUSLIDESHOW_EXCLUDE_K2_ITEM_DESC" />
+
+				<field 
+					name="exclude_easyblogent" 
+					type="text" 
+					default="" 
+					size="25" 
+					class="jufilter-source_selection-5" 
+					label="MOD_JUSLIDESHOW_EXCLUDE_EASYBLOG_ENTRIES" 
+					description="MOD_JUSLIDESHOW_EXCLUDE_EASYBLOG_ENTRIES_DESC" />
+				
+				<field 
+					name="authors" 
+					type="list" 
+					default="all" 
+					class="jufilter-source_selection-0-1-2-3-5-6" 
+					label="MOD_JUSLIDESHOW_AUTHORS" 
+					description="MOD_JUSLIDESHOW_AUTHORS_DESC">
+					<option 
+						value="all">MOD_JUSLIDESHOW_AUTHORS_ALL</option>
+					<option 
+						value="by_me">MOD_JUSLIDESHOW_AUTHORS_BYME</option>
+					<option 
+						value="not_me">MOD_JUSLIDESHOW_AUTHORS_NOTME</option>
+				</field>
+				
+				<field 
+					name="show_featured" 
+					type="list" 
+					default="show" 
+					class="jufilter-source_selection-0-1-2-3-5-6" 
+					label="MOD_JUSLIDESHOW_FEATURED_ITEMS" 
+					description="MOD_JUSLIDESHOW_FEATURED_ITEMS_DESC">
+					<option 
+						value="show">MOD_JUSLIDESHOW_FEATURED_ITEMS_SHOW</option>
+					<option 
+						value="only">MOD_JUSLIDESHOW_FEATURED_ITEMS_ONLY</option>
+					<option 
+						value="hide">MOD_JUSLIDESHOW_FEATURED_ITEMS_HIDE</option>
+				</field>
+				
+				<field 
+					name="ordering" 
+					type="list" 
+					default="created_dsc" 
+					class="jufilter jufilter-source_selection-0-1-2-3-5-6" 
+					label="MOD_JUSLIDESHOW_ORDERING" 
+					description="MOD_JUSLIDESHOW_ORDERING_DESC">
+					<option 
+						value="created_dsc">MOD_JUSLIDESHOW_ORDER_DATE_DSC</option>
+					<option 
+						value="created_asc">MOD_JUSLIDESHOW_ORDER_DATE_ASC</option>
+					<option 
+						value="title_az">MOD_JUSLIDESHOW_ORDER_TITLE_AZ</option>
+					<option 
+						value="title_za">MOD_JUSLIDESHOW_ORDER_TITLE_ZA</option>
+					<option 
+						value="popular_first">MOD_JUSLIDESHOW_ORDER_POPULAR_FIRST</option>
+					<option 
+						value="popular_last">MOD_JUSLIDESHOW_ORDER_POPULAR_LAST</option>
+					<option 
+						value="rated_most">MOD_JUSLIDESHOW_ORDER_MOST_RATED</option>
+					<option 
+						value="rated_least">MOD_JUSLIDESHOW_ORDER_LEAST_RATED</option>
+					<option 
+						value="commented_most">MOD_JUSLIDESHOW_ORDER_COMMENTED_MOST</option>
+					<option 
+						value="commented_latest">MOD_JUSLIDESHOW_ORDER_COMMENTED_LATEST</option>
+					<option 
+						value="ordering_fwd">MOD_JUSLIDESHOW_ORDER_MANAGER_FWD</option>
+					<option 
+						value="ordering_rev">MOD_JUSLIDESHOW_ORDER_MANAGER_REV</option>
+					<option 
+						value="id_asc">MOD_JUSLIDESHOW_ORDER_ID_ASC</option>
+					<option 
+						value="id_dsc">MOD_JUSLIDESHOW_ORDER_ID_DSC</option>
+					<option 
+						value="exact">MOD_JUSLIDESHOW_ORDER_EXACT</option>
+					<option 
+						value="random">MOD_JUSLIDESHOW_ORDER_RANDOM</option>
+				</field>
+				
+				<field 
+					name="count_skip" 
+					type="text" 
+					default="0" 
+					filter="integer"
+					class="jufilter-source_selection-0-2-5 validate-numeric" 
+					label="MOD_JUSLIDESHOW_COUNT_SKIP" 
+					description="MOD_JUSLIDESHOW_COUNT_SKIP_DESC" />
+
+				<field 
+					name="image_source" 
+					type="list" 
+					default="automatic" 
+					class="jufilter-source_selection-0-1" 
+					label="MOD_JUSLIDESHOW_IMAGE_SOURCE" 
+					description="MOD_JUSLIDESHOW_IMAGE_SOURCE_DESC">
+					<option 
+						value="intro">MOD_JUSLIDESHOW_IMAGE_SOURCE_INTRO</option>
+					<option 
+						value="full">MOD_JUSLIDESHOW_IMAGE_SOURCE_FULL</option>
+					<option 
+						value="text">MOD_JUSLIDESHOW_IMAGE_SOURCE_TEXT</option>
+					<option 
+						value="automatic">MOD_JUSLIDESHOW_IMAGE_SOURCE_AUTOMATIC</option>
+				</field>
+
+				<field 
+					name="image_source_k2" 
+					type="list" 
+					default="automatic" 
+					class="jufilter-source_selection-2-3" 
+					label="MOD_JUSLIDESHOW_IMAGE_SOURCE_K2" 
+					description="MOD_JUSLIDESHOW_IMAGE_SOURCE_K2_DESC">
+					<option 
+						value="image">MOD_JUSLIDESHOW_IMAGE_SOURCE_K2_IMAGE</option>
+					<option 
+						value="text">MOD_JUSLIDESHOW_IMAGE_SOURCE_K2_TEXT</option>
+					<option 
+						value="automatic">MOD_JUSLIDESHOW_IMAGE_SOURCE_K2_AUTOMATIC</option>
+				</field>
+
+				<field 
+					name="image_source_easyblog" 
+					type="list" 
+					default="automatic" 
+					class="jufilter-source_selection-5-6" 
+					label="MOD_JUSLIDESHOW_IMAGE_SOURCE_EASYBLOG" 
+					description="MOD_JUSLIDESHOW_IMAGE_SOURCE_EASYBLOG_DESC">
+					<option 
+						value="image">MOD_JUSLIDESHOW_IMAGE_SOURCE_EASYBLOG_IMAGE</option>
+					<option 
+						value="text">MOD_JUSLIDESHOW_IMAGE_SOURCE_EASYBLOG_TEXT</option>
+					<option 
+						value="automatic">MOD_JUSLIDESHOW_IMAGE_SOURCE_EASYBLOG_AUTOMATIC</option>
+				</field>
+				
+				<field 
+					name="filter_image" 
+					type="radio" 
+					default="0" 
+					class="jufilter-source_selection-0-1-2-3-5-6 btn-group" 
+					label="MOD_JUSLIDESHOW_FILTER_IMAGE" 
+					description="MOD_JUSLIDESHOW_FILTER_IMAGE_DESC">
+					<option 
+						value="1">JYES</option>
+					<option 
+						value="0">JNO</option>
+				</field>
+				
+				<field 
+					name="comment_system" 
+					type="list" 
+					default="jcomments" 
+					class="jufilter-source_selection-0-1" 
+					label="MOD_JUSLIDESHOW_COMMENT_SYSTEM" 
+					description="MOD_JUSLIDESHOW_COMMENT_SYSTEM_DESC">
+					<option 
+						value="jcomments">JComments</option>
+					<option 
+						value="jacomment">JA Comment</option>
+					<option 
+						value="rscomments">RSComments!</option>
+					<option 
+						value="komento">Komento</option>
+					<option 
+						value="compojoom">CompojoomComments</option>
+					<option 
+						value="slicomments">sliComments</option>
+				</field>
+				
+				<field 
+					name="comment_system_easyblog" 
+					type="list" 
+					default="easyblog" 
+					class="jufilter-source_selection-5-6" 
+					label="MOD_JUSLIDESHOW_COMMENT_SYSTEM" 
+					description="MOD_JUSLIDESHOW_COMMENT_SYSTEM_DESC">
+					<option 
+						value="jcomments">JComments</option>
+					<option 
+						value="rscomments">RSComments!</option>
+					<option 
+						value="komento">Komento</option>
+					<option 
+						value="compojoom">Compojoom Comments</option>
+					<option 
+						value="easyblog">EasyBlog Comments</option>
+				</field>
+				
+				<field 
+					name="not_public" 
+					type="radio" 
+					default="0" 
+					class="jufilter-source_selection-0-1-2-3 btn-group" 
+					label="MOD_JUSLIDESHOW_NOT_PUBLIC" 
+					description="MOD_JUSLIDESHOW_NOT_PUBLIC_DESC">
+					<option 
+						value="1">JSHOW</option>
+					<option 
+						value="0">JHIDE</option>
+				</field>
+				
+				<field 
+					name="private_easyblog" 
+					type="radio" 
+					default="0" 
+					class="jufilter-source_selection-5-6 btn-group" 
+					label="MOD_JUSLIDESHOW_EASYBLOG_PRIVATE" 
+					description="MOD_JUSLIDESHOW_EASYBLOG_PRIVATE_DESC">
+					<option 
+						value="1">JSHOW</option>
+					<option 
+						value="0">JHIDE</option>
+				</field>
+				
+				<field
+					name="imagefolder"
+					type="jufolder"
+					default="images/"
+					class="jufilter-source_selection-4 notrigger"
+					label="MOD_JUSLIDESHOW_IMAGES_FOLDER"
+					description="MOD_JUSLIDESHOW_IMAGES_FOLDER_DESC" />
+				
+				<field 
+					name="jugallery" 
+					type="jugallery"
+					folderfield="imagefolder"
+					filter="raw" 
+					default="[]" 
+					class="jufilter-source_selection-4"
+					label="MOD_JUSLIDESHOW_GALLERY" 
+					description="MOD_JUSLIDESHOW_GALLERY_DESC" />
+				
+				<field 
+					type="jugroup" 
+					name="juanimation_generator" 
+					groupfields="juanimation,juanimation_msg"
+					class="close jufilter-label_animation-custom_animation"
+					title="MOD_JUSLIDESHOW_ANIMATION_ELEMENT_GENERATOR" />
+					
+				<field type="jumessage"
+					name="juanimation_msg"
+					description="MOD_JUSLIDESHOW_ANIMATION_ELEMENT_GENERATOR_MSG"
+					class="jufilter-label_animation-custom_animation juicon-info"
+				/>
+				
+				<field 
+					name="juanimation" 
+					type="juanimation"
+					default="" 
+					class="jufilter-label_animation-custom_animation"
+					label="MOD_JUSLIDESHOW_ANIMATION_ELEMENT_GENERATOR" />
+					
+				<field
+					name="imageordering"
+					type="list"
+					default="ordering"
+					class="jufilter-source_selection-4"
+					label="MOD_JUSLIDESHOW_IMAGE_ORDERING"
+					description="MOD_JUSLIDESHOW_IMAGE_ORDERING_DESC">
+					<option
+						value="ordering">MOD_JUSLIDESHOW_IMAGE_ORDER_CUSTOM</option>
+					<option
+						value="name_asc">MOD_JUSLIDESHOW_IMAGE_ORDER_NAME_ASC</option>
+					<option
+						value="name_desc">MOD_JUSLIDESHOW_IMAGE_ORDER_NAME_DESC</option>
+					<option
+						value="title_asc">MOD_JUSLIDESHOW_IMAGE_ORDER_TITLE_ASC</option>
+					<option
+						value="title_desc">MOD_JUSLIDESHOW_IMAGE_ORDER_TITLE_DESC</option>
+					<option
+						value="time_asc">MOD_JUSLIDESHOW_IMAGE_ORDER_TIME_ASC</option>
+					<option
+						value="time_desc">MOD_JUSLIDESHOW_IMAGE_ORDER_TIME_DESC</option>
+					<option
+						value="random">MOD_JUSLIDESHOW_IMAGE_ORDER_RANDOM</option>
+				</field>
+				
+				<field
+					name="maxitems"
+					type="text"
+					default="15"
+					filter="integer"
+					class="validate-numeric"
+					label="MOD_JUSLIDESHOW_MAX_ITEMS"
+					description="MOD_JUSLIDESHOW_MAX_ITEMS_DESC" />
+				
+				<field type="jugroup" name="slider_item_settings" title="MOD_JUSLIDESHOW_SLIDESHOW_SETTINGS" />
+				
+				<field
+					name="width_main"
+					type="text"
+					default="800"
+					filter="integer"
+					class="validate-numeric"
+					label="MOD_JUSLIDESHOW_SLIDESHOW_WIDTH"
+					description="MOD_JUSLIDESHOW_SLIDESHOW_WIDTH_DESC" />
+					
+				<field
+					name="height_main"
+					type="text"
+					default="300"
+					filter="integer"
+					class="validate-numeric"
+					label="MOD_JUSLIDESHOW_SLIDESHOW_HEIGHT"
+					description="MOD_JUSLIDESHOW_SLIDESHOW_HEIGHT_DESC" />
+				
+				<field
+					name="boxshadow"
+					type="list"
+					default=""
+					label="MOD_JUSLIDESHOW_BOXSHADOW"
+					description="MOD_JUSLIDESHOW_BOXSHADOW_DESC">
+					<option
+						value="">MOD_JUSLIDESHOW_NO_SHADOW</option>
+					<option
+						value="shadow1">MOD_JUSLIDESHOW_SHADOW1</option>
+					<option
+						value="shadow2">MOD_JUSLIDESHOW_SHADOW2</option>
+					<option
+						value="shadow3">MOD_JUSLIDESHOW_SHADOW3</option>
+					<option
+						value="shadow4">MOD_JUSLIDESHOW_SHADOW4</option>
+					<option
+						value="shadow5">MOD_JUSLIDESHOW_SHADOW5</option>
+					<option
+						value="shadow6">MOD_JUSLIDESHOW_SHADOW6</option>
+				</field>
+				
+				<field
+					name="imagelinked"
+					type="radio"
+					default="0"
+					class="btn-group"
+					label="MOD_JUSLIDESHOW_IMAGE_LINKED"
+					description="MOD_JUSLIDESHOW_IMAGE_LINKED_DESC">
+					<option
+						value="1">JYES</option>
+					<option
+						value="0">JNO</option>
+				</field>
+				
+				<field
+					name="label"
+					type="radio"
+					default="1"
+					class="jufilter btn-group"
+					label="MOD_JUSLIDESHOW_LABEL"
+					description="MOD_JUSLIDESHOW_LABEL_DESC">
+					<option
+						value="1">MOD_JUSLIDESHOW_ALWAYS</option>
+					<option
+						value="2">MOD_JUSLIDESHOW_MOUSE_OVER</option>
+					<option
+						value="0">JNO</option>
+				</field>
+					
+				<field
+					name="label_opacity"
+					type="text"
+					default="0.9"
+					class="jufilter-label-1-2"
+					label="MOD_JUSLIDESHOW_LABEL_OPACITY"
+					description="MOD_JUSLIDESHOW_LABEL_OPACITY_DESC" />
+					
+				<field
+					name="label_animation"
+					type="list"
+					default="default"
+					class="jufilter jufilter-label-1-2"
+					label="MOD_JUSLIDESHOW_LABEL_ANIMATION"
+					description="MOD_JUSLIDESHOW_LABEL_ANIMATION_DESC">
+					<option
+						value="default">Default</option>
+					<option
+						value="fade">Fade</option>
+					<option
+						value="slide_horizontal">Slide horizontal</option>
+					<option
+						value="slide_vertical">Slide vertical</option>
+					<option
+						value="slide_fade_horizontal">Slide fade horizontal</option>
+					<option
+						value="slide_fade_vertical">Slide fade vertical</option>
+					<option
+						value="zoom">Zoom</option>
+					<option
+						value="zoom_fade">Zoom Fade</option>
+					<option
+						value="rotate">Rotate</option>
+					<option
+						value="fixed">Fixed</option>
+					<option
+						value="custom_animation">Custom Animation</option>
+				</field>
+				
+				<field
+					name="label_animate_duration_in"
+					type="text"
+					default="400"
+					filter="integer"
+					class="jufilter-label-1-2 validate-numeric"
+					label="MOD_JUSLIDESHOW_LABEL_ANIMATE_DURATION_IN"
+					description="MOD_JUSLIDESHOW_LABEL_ANIMATE_DURATION_IN_DESC" />
+				
+				<field
+					name="label_animate_duration_out"
+					type="text"
+					default="400"
+					filter="integer"
+					class="jufilter-label-1-2 validate-numeric"
+					label="MOD_JUSLIDESHOW_LABEL_ANIMATE_DURATION_OUT"
+					description="MOD_JUSLIDESHOW_LABEL_ANIMATE_DURATION_OUT_DESC" />
+				
+				<field
+					name="label_delay"
+					type="text"
+					default="0"
+					filter="integer"
+					class="jufilter-label-1-2 validate-numeric"
+					label="MOD_JUSLIDESHOW_LABEL_DELAY"
+					description="MOD_JUSLIDESHOW_LABEL_DELAY_DESC" />
+				
+				<field
+					name="label_easing_in"
+					type="list"
+					default="linear"
+					class="jufilter-label-1-2"
+					label="MOD_JUSLIDESHOW_LABEL_EASING_IN"
+					description="MOD_JUSLIDESHOW_LABEL_EASING_IN_DESC">
+					<option
+						value="linear">Linear</option>
+					<option
+						value="swing">Swing</option>
+					<option
+						value="easeInQuad">easeInQuad</option>
+					<option
+						value="easeOutQuad">easeOutQuad</option>
+					<option
+						value="easeInOutQuad">easeInOutQuad</option>
+					<option
+						value="easeInCubic">easeInCubic</option>
+					<option
+						value="easeOutCubic">easeOutCubic</option>
+					<option
+						value="easeInOutCubic">easeInOutCubic</option>
+					<option
+						value="easeInQuart">easeInQuart</option>
+					<option
+						value="easeOutQuart">easeOutQuart</option>
+					<option
+						value="easeInOutQuart">easeInOutQuart</option>
+					<option
+						value="easeInQuint">easeInQuint</option>
+					<option
+						value="easeOutQuint">easeOutQuint</option>
+					<option
+						value="easeInOutQuint">easeInOutQuint</option>
+					<option
+						value="easeInSine">easeInSine</option>
+					<option
+						value="easeOutSine">easeOutSine</option>
+					<option
+						value="easeInOutSine">easeInOutSine</option>
+					<option
+						value="easeInExpo">easeInExpo</option>
+					<option
+						value="easeOutExpo">easeOutExpo</option>
+					<option
+						value="easeInOutExpo">easeInOutExpo</option>
+					<option
+						value="easeInCirc">easeInCirc</option>
+					<option
+						value="easeOutCirc">easeOutCirc</option>
+					<option
+						value="easeInOutCirc">easeInOutCirc</option>
+					<option
+						value="easeInElastic">easeInElastic</option>
+					<option
+						value="easeOutElastic">easeOutElastic</option>
+					<option
+						value="easeInOutElastic">easeInOutElastic</option>
+					<option
+						value="easeInBack">easeInBack</option>
+					<option
+						value="easeOutBack">easeOutBack</option>
+					<option
+						value="easeInOutBack">easeInOutBack</option>
+					<option
+						value="easeInBounce">easeInBounce</option>
+					<option
+						value="easeOutBounce">easeOutBounce</option>
+					<option
+						value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				
+				<field
+					name="label_easing_out"
+					type="list"
+					default="linear"
+					class="jufilter-label-1-2"
+					label="MOD_JUSLIDESHOW_LABEL_EASING_OUT"
+					description="MOD_JUSLIDESHOW_LABEL_EASING_OUT_DESC">
+					<option
+						value="linear">Linear</option>
+					<option
+						value="swing">Swing</option>
+					<option
+						value="easeInQuad">easeInQuad</option>
+					<option
+						value="easeOutQuad">easeOutQuad</option>
+					<option
+						value="easeInOutQuad">easeInOutQuad</option>
+					<option
+						value="easeInCubic">easeInCubic</option>
+					<option
+						value="easeOutCubic">easeOutCubic</option>
+					<option
+						value="easeInOutCubic">easeInOutCubic</option>
+					<option
+						value="easeInQuart">easeInQuart</option>
+					<option
+						value="easeOutQuart">easeOutQuart</option>
+					<option
+						value="easeInOutQuart">easeInOutQuart</option>
+					<option
+						value="easeInQuint">easeInQuint</option>
+					<option
+						value="easeOutQuint">easeOutQuint</option>
+					<option
+						value="easeInOutQuint">easeInOutQuint</option>
+					<option
+						value="easeInSine">easeInSine</option>
+					<option
+						value="easeOutSine">easeOutSine</option>
+					<option
+						value="easeInOutSine">easeInOutSine</option>
+					<option
+						value="easeInExpo">easeInExpo</option>
+					<option
+						value="easeOutExpo">easeOutExpo</option>
+					<option
+						value="easeInOutExpo">easeInOutExpo</option>
+					<option
+						value="easeInCirc">easeInCirc</option>
+					<option
+						value="easeOutCirc">easeOutCirc</option>
+					<option
+						value="easeInOutCirc">easeInOutCirc</option>
+					<option
+						value="easeInElastic">easeInElastic</option>
+					<option
+						value="easeOutElastic">easeOutElastic</option>
+					<option
+						value="easeInOutElastic">easeInOutElastic</option>
+					<option
+						value="easeInBack">easeInBack</option>
+					<option
+						value="easeOutBack">easeOutBack</option>
+					<option
+						value="easeInOutBack">easeInOutBack</option>
+					<option
+						value="easeInBounce">easeInBounce</option>
+					<option
+						value="easeOutBounce">easeOutBounce</option>
+					<option
+						value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				
+				<field 
+					name="show_title" 
+					type="radio" 
+					default="1" 
+					class="jufilter btn-group" 
+					label="MOD_JUSLIDESHOW_SHOW_TITLE" 
+					description="MOD_JUSLIDESHOW_SHOW_TITLE_DESC">
+					<option 
+						value="1">JYES</option>
+					<option 
+						value="0">JNO</option>
+				</field>
+				
+				<field 
+					name="limit_title" 
+					type="text" 
+					default="30" 
+					filter="integer"
+					class="jufilter-show_title-1 validate-numeric" 
+					label="MOD_JUSLIDESHOW_LIMIT_TITLE" 
+					description="MOD_JUSLIDESHOW_LIMIT_TITLE_DESC" />
+				
+				<field
+					name="title_link"
+					type="radio"
+					default="1"
+					class="jufilter-show_title-1 btn-group"
+					label="MOD_JUSLIDESHOW_TITLE_LINK"
+					description="MOD_JUSLIDESHOW_TITLE_LINK_DESC">
+					<option
+						value="1">JYES</option>
+					<option
+						value="0">JNO</option>
+				</field>
+				
+				<field 
+					name="show_text" 
+					type="radio" 
+					default="1" 
+					class="jufilter btn-group" 
+					label="MOD_JUSLIDESHOW_SHOW_TEXT" 
+					description="MOD_JUSLIDESHOW_SHOW_TEXT_DESC">
+					<option 
+						value="1">JYES</option>
+					<option 
+						value="0">JNO</option>
+				</field>
+				
+				<field 
+					name="limit_text" 
+					type="text" 
+					default="120" 
+					filter="integer"
+					class="jufilter-show_text-1 validate-numeric" 
+					label="MOD_JUSLIDESHOW_LIMIT_TEXT" 
+					description="MOD_JUSLIDESHOW_LIMIT_TEXT_DESC" />
+				
+				<field 
+					name="intro_clean" 
+					type="radio" 
+					default="1" 
+					class="jufilter jufilter-show_text-1 btn-group" 
+					label="MOD_JUSLIDESHOW_CLEAN_XHTML" 
+					description="MOD_JUSLIDESHOW_CLEAN_XHTML_DESC">
+					<option 
+						value="1">JYES</option>
+					<option 
+						value="0">JNO</option>
+				</field>
+				
+				<field 
+					name="allowable_tags" 
+					type="text" 
+					default="h3,p" 
+					class="jufilter-intro_clean-1 jufilter-show_text-1" 
+					label="MOD_JUSLIDESHOW_ALLOWABLE_TAGS" 
+					description="MOD_JUSLIDESHOW_ALLOWABLE_TAGS_DESC" />
+				
+				<field 
+					name="video_support" 
+					type="radio" 
+					default="1" 
+					class="jufilter jufilter-show_text-1 btn-group" 
+					label="MOD_JUSLIDESHOW_VIDEO_SUPPORT" 
+					description="MOD_JUSLIDESHOW_VIDEO_SUPPORT_DESC">
+					<option 
+						value="1">JYES</option>
+					<option 
+						value="0">JNO</option>
+				</field>
+				
+				<field 
+					name="video_autoplay" 
+					type="radio" 
+					default="false" 
+					class="jufilter-show_text-1 jufilter-video_support-1 btn-group" 
+					label="MOD_JUSLIDESHOW_VIDEO_AUTOPLAY" 
+					description="MOD_JUSLIDESHOW_VIDEO_AUTOPLAY_DESC">
+					<option 
+						value="true">JYES</option>
+					<option 
+						value="false">JNO</option>
+				</field>
+				
+				<field 
+					name="plugins_support" 
+					type="radio" 
+					default="0" 
+					class="jufilter-show_text-1 btn-group" 
+					label="MOD_JUSLIDESHOW_PLUGINS_SUPPORT" 
+					description="MOD_JUSLIDESHOW_PLUGINS_SUPPORT_DESC">
+					<option 
+						value="1">JYES</option>
+					<option 
+						value="0">JNO</option>
+				</field>
+				
+				<field
+					name="show_readmore"
+					type="radio"
+					default="0"
+					class="jufilter btn-group"
+					label="MOD_JUSLIDESHOW_READMORE"
+					description="MOD_JUSLIDESHOW_READMORE_DESC">
+					<option
+						value="1">JYES</option>
+					<option
+						value="0">JNO</option>
+				</field>
+				
+				<field 
+					name="read_more" 
+					type="text" 
+					default="Read more" 
+					class="jufilter-show_readmore-1"
+					label="MOD_JUSLIDESHOW_READ_MORE_TEXT" 
+					description="MOD_JUSLIDESHOW_READ_MORE_TEXT_DESC" />
+				
+				<field
+					name="target"
+					type="list"
+					default="_self"
+					label="MOD_JUSLIDESHOW_TARGET"
+					description="MOD_JUSLIDESHOW_TARGET_DESC">
+					<option
+						value="_self">MOD_JUSLIDESHOW_CURRENT_WINDOW</option>
+					<option
+						value="_blank">MOD_JUSLIDESHOW_NEW_WINDOW</option>
+				</field>
+				
+				<field
+					name="slideshowclass"
+					type="textarea"
+					cols="30"
+					rows="3"
+					default=""
+					class="jufilter-source_selection-0-1-2-3-5-6"
+					label="MOD_JUSLIDESHOW_SLIDESHOW_CLASS"
+					description="MOD_JUSLIDESHOW_SLIDESHOW_CLASS_DESC" />
+				
+				<field
+					name="auto_play"
+					type="radio"
+					class="btn-group"
+					default="false"
+					label="MOD_JUSLIDESHOW_AUTO_PLAY"
+					description="MOD_JUSLIDESHOW_AUTO_PLAY_DESC">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				
+				<field
+					name="progressbar"
+					type="radio"
+					default="false"
+					class="btn-group"
+					label="MOD_JUSLIDESHOW_PROGRESS_BAR"
+					description="MOD_JUSLIDESHOW_PROGRESS_BAR_DESC">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				
+				<field
+					name="stop_over"
+					type="radio"
+					default="true"
+					class="btn-group"
+					label="MOD_JUSLIDESHOW_STOP_OVER"
+					description="MOD_JUSLIDESHOW_STOP_OVER_DESC">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				
+				<field
+					name="startimage"
+					type="text"
+					default="0"
+					filter="integer"
+					class="validate-numeric"
+					label="MOD_JUSLIDESHOW_START_IMAGE"
+					description="MOD_JUSLIDESHOW_START_IMAGE_DESC" />
+					
+				<field
+					name="responsive"
+					type="radio"
+					default="false"
+					class="btn-group"
+					label="MOD_JUSLIDESHOW_RESPONSIVE"
+					description="MOD_JUSLIDESHOW_RESPONSIVE_DESC">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				
+				<field
+					name="show_randomly"
+					type="radio"
+					default="false"
+					class="btn-group"
+					label="MOD_JUSLIDESHOW_SHOW_RANDOMLY"
+					description="MOD_JUSLIDESHOW_SHOW_RANDOMLY_DESC">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				
+				<field
+					name="slideshowanimation"
+					type="textarea"
+					cols="30"
+					rows="3"
+					default=""
+					label="MOD_JUSLIDESHOW_SLIDESHOW_ANIMATION"
+					description="MOD_JUSLIDESHOW_SLIDESHOW_ANIMATION_DESC" />
+				
+				<field
+					name="with_animations"
+					type="list"
+					multiple="true"
+					cols="30"
+					rows="3"
+					label="MOD_JUSLIDESHOW_SPECIFIED_ANIMATIONS"
+					description="MOD_JUSLIDESHOW_SPECIFIED_ANIMATIONS_DESC">
+					<option
+						value="cube">cube</option>
+					<option
+						value="cubeRandom">cubeRandom</option>
+					<option
+						value="block">block</option>
+					<option
+						value="cubeStop">cubeStop</option>
+					<option
+						value="cubeStopRandom">cubeStopRandom</option>
+					<option
+						value="cubeHide">cubeHide</option>
+					<option
+						value="cubeSize">cubeSize</option>
+					<option
+						value="horizontal">horizontal</option>
+					<option
+						value="showBars">showBars</option>
+					<option
+						value="showBarsRandom">showBarsRandom</option>
+					<option
+						value="tube">tube</option>
+					<option
+						value="fade">fade</option>
+					<option
+						value="fadeFour">fadeFour</option>
+					<option
+						value="paralell">paralell</option>
+					<option
+						value="blind">blind</option>
+					<option
+						value="blindHeight">blindHeight</option>
+					<option
+						value="blindWidth">blindWidth</option>
+					<option
+						value="directionTop">directionTop</option>
+					<option
+						value="directionBottom">directionBottom</option>
+					<option
+						value="directionRight">directionRight</option>
+					<option
+						value="directionLeft">directionLeft</option>
+					<option
+						value="cubeSpread">cubeSpread</option>
+					<option
+						value="cubeJelly">cubeJelly</option>
+					<option
+						value="glassCube">glassCube</option>
+					<option
+						value="glassBlock">glassBlock</option>
+					<option
+						value="circles">circles</option>
+					<option
+						value="circlesInside">circlesInside</option>
+					<option
+						value="circlesRotate">circlesRotate</option>
+					<option
+						value="cubeShow">cubeShow</option>
+					<option
+						value="upBars">upBars</option>
+					<option
+						value="downBars">downBars</option>
+					<option
+						value="hideBars">hideBars</option>
+					<option
+						value="swapBars">swapBars</option>
+					<option
+						value="swapBarsBack">swapBarsBack</option>
+					<option
+						value="swapBlocks">swapBlocks</option>
+					<option
+						value="cut">cut</option>
+					<option
+						value="slideHorizontal">slideHorizontal</option>
+					<option
+						value="slideVertical">slideVertical</option>
+					<option
+						value="zoomFade">zoomFade</option>
+				</field>
+				
+				<field
+					name="animation"
+					type="list"
+					default=""
+					label="MOD_JUSLIDESHOW_ANIMATION"
+					description="MOD_JUSLIDESHOW_ANIMATION_DESC">
+					<option
+						value="">Default</option>
+					<option
+						value="random">Random</option>
+					<option
+						value="randomSmart">RandomSmart</option>
+					<option
+						value="cube">cube</option>
+					<option
+						value="cubeRandom">cubeRandom</option>
+					<option
+						value="block">block</option>
+					<option
+						value="cubeStop">cubeStop</option>
+					<option
+						value="cubeStopRandom">cubeStopRandom</option>
+					<option
+						value="cubeHide">cubeHide</option>
+					<option
+						value="cubeSize">cubeSize</option>
+					<option
+						value="horizontal">horizontal</option>
+					<option
+						value="showBars">showBars</option>
+					<option
+						value="showBarsRandom">showBarsRandom</option>
+					<option
+						value="tube">tube</option>
+					<option
+						value="fade">fade</option>
+					<option
+						value="fadeFour">fadeFour</option>
+					<option
+						value="paralell">paralell</option>
+					<option
+						value="blind">blind</option>
+					<option
+						value="blindHeight">blindHeight</option>
+					<option
+						value="blindWidth">blindWidth</option>
+					<option
+						value="directionTop">directionTop</option>
+					<option
+						value="directionBottom">directionBottom</option>
+					<option
+						value="directionRight">directionRight</option>
+					<option
+						value="directionLeft">directionLeft</option>
+					<option
+						value="cubeSpread">cubeSpread</option>
+					<option
+						value="cubeJelly">cubeJelly</option>
+					<option
+						value="glassCube">glassCube</option>
+					<option
+						value="glassBlock">glassBlock</option>
+					<option
+						value="circles">circles</option>
+					<option
+						value="circlesInside">circlesInside</option>
+					<option
+						value="circlesRotate">circlesRotate</option>
+					<option
+						value="cubeShow">cubeShow</option>
+					<option
+						value="upBars">upBars</option>
+					<option
+						value="downBars">downBars</option>
+					<option
+						value="hideBars">hideBars</option>
+					<option
+						value="swapBars">swapBars</option>
+					<option
+						value="swapBarsBack">swapBarsBack</option>
+					<option
+						value="swapBlocks">swapBlocks</option>
+					<option
+						value="cut">cut</option>
+					<option
+						value="slideHorizontal">slideHorizontal</option>
+					<option
+						value="slideVertical">slideVertical</option>
+					<option
+						value="zoomFade">zoomFade</option>
+				</field>
+					
+				<field
+					name="velocity"
+					type="text"
+					default="1"
+					label="MOD_JUSLIDESHOW_VELOCITY"
+					description="MOD_JUSLIDESHOW_VELOCITY_DESC" />
+					
+				<field
+					name="easing_default"
+					type="list"
+					default=""
+					label="MOD_JUSLIDESHOW_EASING_DEFAULT"
+					description="MOD_JUSLIDESHOW_EASING_DEFAULT_DESC">
+					<option
+						value="">Animation Easing Default</option>
+					<option
+						value="linear">Linear</option>
+					<option
+						value="swing">Swing</option>
+					<option
+						value="easeInQuad">easeInQuad</option>
+					<option
+						value="easeOutQuad">easeOutQuad</option>
+					<option
+						value="easeInOutQuad">easeInOutQuad</option>
+					<option
+						value="easeInCubic">easeInCubic</option>
+					<option
+						value="easeOutCubic">easeOutCubic</option>
+					<option
+						value="easeInOutCubic">easeInOutCubic</option>
+					<option
+						value="easeInQuart">easeInQuart</option>
+					<option
+						value="easeOutQuart">easeOutQuart</option>
+					<option
+						value="easeInOutQuart">easeInOutQuart</option>
+					<option
+						value="easeInQuint">easeInQuint</option>
+					<option
+						value="easeOutQuint">easeOutQuint</option>
+					<option
+						value="easeInOutQuint">easeInOutQuint</option>
+					<option
+						value="easeInSine">easeInSine</option>
+					<option
+						value="easeOutSine">easeOutSine</option>
+					<option
+						value="easeInOutSine">easeInOutSine</option>
+					<option
+						value="easeInExpo">easeInExpo</option>
+					<option
+						value="easeOutExpo">easeOutExpo</option>
+					<option
+						value="easeInOutExpo">easeInOutExpo</option>
+					<option
+						value="easeInCirc">easeInCirc</option>
+					<option
+						value="easeOutCirc">easeOutCirc</option>
+					<option
+						value="easeInOutCirc">easeInOutCirc</option>
+					<option
+						value="easeInElastic">easeInElastic</option>
+					<option
+						value="easeOutElastic">easeOutElastic</option>
+					<option
+						value="easeInOutElastic">easeInOutElastic</option>
+					<option
+						value="easeInBack">easeInBack</option>
+					<option
+						value="easeOutBack">easeOutBack</option>
+					<option
+						value="easeInOutBack">easeInOutBack</option>
+					<option
+						value="easeInBounce">easeInBounce</option>
+					<option
+						value="easeOutBounce">easeOutBounce</option>
+					<option
+						value="easeInOutBounce">easeInOutBounce</option>
+				</field>
+				
+				<field
+					name="interval"
+					type="text"
+					default="4000"
+					filter="integer"
+					class="validate-numeric"
+					label="MOD_JUSLIDESHOW_INTERVAL"
+					description="MOD_JUSLIDESHOW_INTERVAL_DESC" />
+				
+				<field
+					name="nextprev_btn"
+					type="radio"
+					default="true"
+					class="btn-group"
+					label="MOD_JUSLIDESHOW_NEXT_PREV_BTN"
+					description="MOD_JUSLIDESHOW_NEXT_PREV_BTN_DESC">
+					<option
+						value="true">JSHOW</option>
+					<option
+						value="false">JHIDE</option>
+				</field>
+				
+				<field
+					name="navigation"
+					type="list"
+					default="2"
+					class="jufilter"
+					label="MOD_JUSLIDESHOW_NAVIGATION"
+					description="MOD_JUSLIDESHOW_NAVIGATION_DESC">
+					<option
+						value="0">MOD_JUSLIDESHOW_HIDE</option>
+					<option
+						value="1">MOD_JUSLIDESHOW_THUMBS</option>
+					<option
+						value="2">MOD_JUSLIDESHOW_DOTS</option>
+					<option
+						value="3">MOD_JUSLIDESHOW_NUMBERS</option>
+				</field>
+				
+				<field
+					name="width_thumb"
+					type="text"
+					default="90"
+					filter="integer"
+					class="jufilter-navigation-1-2 validate-numeric"
+					label="MOD_JUSLIDESHOW_WIDTH_THUMB"
+					description="MOD_JUSLIDESHOW_WIDTH_THUMB_DESC" />
+					
+				<field
+					name="height_thumb"
+					type="text"
+					default="50"
+					filter="integer"
+					class="jufilter-navigation-1-2 validate-numeric"
+					label="MOD_JUSLIDESHOW_HEIGHT_THUMB"
+					description="MOD_JUSLIDESHOW_HEIGHT_THUMB_DESC" />
+				
+				<field
+					name="thumbs_mode"
+					type="radio"
+					default="horizontal"
+					class="jufilter jufilter-navigation-1 btn-group"
+					label="MOD_JUSLIDESHOW_THUMBS_MODE"
+					description="MOD_JUSLIDESHOW_THUMBS_MODE_DESC">
+					<option
+						value="horizontal">MOD_JUSLIDESHOW_HORIZONTAL</option>
+					<option
+						value="vertical">MOD_JUSLIDESHOW_VERTICAL</option>
+				</field>
+				
+				<field
+					name="thumbs_horizontal_position"
+					type="radio"
+					default="center"
+					class="jufilter-thumbs_mode-horizontal jufilter-navigation-1 btn-group"
+					label="MOD_JUSLIDESHOW_THUMBS_HORIZONTAL_POSITION"
+					description="MOD_JUSLIDESHOW_THUMBS_HORIZONTAL_POSITION_DESC">
+					<option
+						value="left">MOD_JUSLIDESHOW_LEFT</option>
+					<option
+						value="center">MOD_JUSLIDESHOW_CENTER</option>
+					<option
+						value="right">MOD_JUSLIDESHOW_RIGHT</option>
+				</field>
+				
+				<field
+					name="thumbs_vertical_position"
+					type="radio"
+					default="center"
+					class="jufilter-thumbs_mode-vertical jufilter-navigation-1 btn-group"
+					label="MOD_JUSLIDESHOW_THUMBS_VERTICAL_POSITION"
+					description="MOD_JUSLIDESHOW_THUMBS_VERTICAL_POSITION_DESC">
+					<option
+						value="top">MOD_JUSLIDESHOW_TOP</option>
+					<option
+						value="center">MOD_JUSLIDESHOW_CENTER</option>
+					<option
+						value="bottom">MOD_JUSLIDESHOW_BOTTOM</option>
+				</field>
+				
+				<field
+					name="number_displayed_thumbs"
+					type="text"
+					default="4"
+					filter="integer"
+					class="jufilter-navigation-1 validate-numeric"
+					label="MOD_JUSLIDESHOW_NUMBER_DISPLAYED_THUMBS"
+					description="MOD_JUSLIDESHOW_NUMBER_DISPLAYED_THUMBS_DESC" />
+
+				<field
+					name="thumbs_when_mouseover"
+					type="radio"
+					default="false"
+					class="jufilter-navigation-1 btn-group"
+					label="MOD_JUSLIDESHOW_SHOW_THUMBS"
+					description="MOD_JUSLIDESHOW_SHOW_THUMBS_DESC">
+					<option
+						value="false">Always</option>
+					<option
+						value="true">Mouse over</option>
+				</field>
+					
+				<field
+					name="dotsposition"
+					type="radio"
+					default="center"
+					class="jufilter-navigation-2 btn-group"
+					label="MOD_JUSLIDESHOW_DOTS_POSITION"
+					description="MOD_JUSLIDESHOW_DOTS_POSITION_DESC">
+					<option
+						value="left">MOD_JUSLIDESHOW_LEFT</option>
+					<option
+						value="center">MOD_JUSLIDESHOW_CENTER</option>
+					<option
+						value="right">MOD_JUSLIDESHOW_RIGHT</option>
+				</field>
+				
+				<field
+					name="preview"
+					type="radio"
+					default="false"
+					class="jufilter jufilter-navigation-2 btn-group"
+					label="MOD_JUSLIDESHOW_PREVIEW"
+					description="MOD_JUSLIDESHOW_PREVIEW_DESC">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				
+				<field
+					name="preview_position"
+					type="list"
+					default="bottom_right"
+					class="jufilter-preview-true jufilter-navigation-2"
+					label="MOD_JUSLIDESHOW_PREVIEW_POSITION"
+					description="MOD_JUSLIDESHOW_PREVIEW_POSITION_DESC">
+					<option
+						value="top_left">Top Left</option>
+					<option
+						value="top_center">Top Center</option>
+					<option
+						value="top_right">Top Right</option>
+					<option
+						value="bottom_left">Bottom Left</option>
+					<option
+						value="bottom_center">Bottom Center</option>
+					<option
+						value="bottom_right">Bottom Right</option>
+				</field>
+				
+				<field
+					name="numbersposition"
+					type="radio"
+					default="center"
+					class="jufilter-navigation-3 btn-group"
+					label="MOD_JUSLIDESHOW_NUMBERS_POSITION"
+					description="MOD_JUSLIDESHOW_NUMBERS_POSITION_DESC">
+					<option
+						value="left">MOD_JUSLIDESHOW_LEFT</option>
+					<option
+						value="center">MOD_JUSLIDESHOW_CENTER</option>
+					<option
+						value="right">MOD_JUSLIDESHOW_RIGHT</option>
+				</field>
+				
+				<field
+					name="mousewheel"
+					type="radio"
+					default="true"
+					class="btn-group"
+					label="MOD_JUSLIDESHOW_MOUSEWHEEL"
+					description="MOD_JUSLIDESHOW_MOUSEWHEEL_DESC">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				
+				<field
+					name="touch"
+					type="radio"
+					default="true"
+					class="btn-group"
+					label="MOD_JUSLIDESHOW_TOUCH"
+					description="MOD_JUSLIDESHOW_TOUCH_DESC">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+					
+				<field
+					name="hidetools"
+					type="radio"
+					default="false"
+					class="jufilter btn-group"
+					label="MOD_JUSLIDESHOW_HIDE_TOOLS"
+					description="MOD_JUSLIDESHOW_HIDE_TOOLS_DESC">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				
+				<field
+					name="opacity_elements"
+					type="text"
+					default="0.75"
+					class="jufilter-hidetools-true"
+					label="MOD_JUSLIDESHOW_OPACITY_ELEMENTS"
+					description="MOD_JUSLIDESHOW_OPACITY_ELEMENTS_DESC" />
+					
+				<field
+					name="interval_in_elements"
+					type="text"
+					default="300"
+					filter="integer"
+					class="jufilter-hidetools-true validate-numeric"
+					label="MOD_JUSLIDESHOW_INTERVAL_IN_ELEMENTS"
+					description="MOD_JUSLIDESHOW_INTERVAL_IN_ELEMENTS_DESC" />
+					
+				<field
+					name="interval_out_elements"
+					type="text"
+					default="500"
+					filter="integer"
+					class="jufilter-hidetools-true validate-numeric"
+					label="MOD_JUSLIDESHOW_INTERVAL_OUT_ELEMENTS"
+					description="MOD_JUSLIDESHOW_INTERVAL_OUT_ELEMENTS_DESC" />
+				
+				<field
+					name="focus"
+					type="radio"
+					default="false"
+					class="jufilter btn-group"
+					label="MOD_JUSLIDESHOW_FOCUS"
+					description="MOD_JUSLIDESHOW_FOCUS_DESC">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				
+				<field
+					name="focus_position"
+					type="list"
+					default="center"
+					class="jufilter-focus-true"
+					label="MOD_JUSLIDESHOW_FOCUS_POSITION"
+					description="MOD_JUSLIDESHOW_FOCUS_POSITION_DESC">
+					<option
+						value="center">Center</option>
+					<option
+						value="leftTop">Left Top</option>
+					<option
+						value="rightTop">Right Top</option>
+					<option
+						value="leftBottom">Left Bottom</option>
+					<option
+						value="rightBottom">Right Bottom</option>
+				</field>
+				
+				<field
+					name="focus_fullscreen"
+					type="radio"
+					default="false"
+					class="jufilter-focus-true btn-group"
+					label="MOD_JUSLIDESHOW_FOCUS_FULL_SCREEN"
+					description="MOD_JUSLIDESHOW_FOCUS_FULL_SCREEN_DESC">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				
+				<field
+					name="controls"
+					type="radio"
+					default="false"
+					class="jufilter btn-group"
+					label="MOD_JUSLIDESHOW_CONTROLS"
+					description="MOD_JUSLIDESHOW_CONTROLS_DESC">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				
+				<field
+					name="controls_position"
+					type="list"
+					default="center"
+					class="jufilter-controls-true"
+					label="MOD_JUSLIDESHOW_CONTROLS_POSITION"
+					description="MOD_JUSLIDESHOW_CONTROLS_POSITION_DESC">
+					<option
+						value="center">Center</option>
+					<option
+						value="leftTop">Left Top</option>
+					<option
+						value="rightTop">RightTop</option>
+					<option
+						value="leftBottom">Left Bottom</option>
+					<option
+						value="rightBottom">Right Bottom</option>
+				</field>
+
+				<field
+					name="enable_navigation_keys"
+					type="radio"
+					default="false"
+					class="btn-group"
+					label="MOD_JUSLIDESHOW_ENABLE_NAVIGATION_KEYS"
+					description="MOD_JUSLIDESHOW_ENABLE_NAVIGATION_KEYS_DESC">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+				
+				<field
+					name="fullscreen"
+					type="radio"
+					default="false"
+					class="btn-group"
+					label="MOD_JUSLIDESHOW_FULL_SCREEN"
+					description="MOD_JUSLIDESHOW_FULL_SCREEN_DESC">
+					<option
+						value="true">JYES</option>
+					<option
+						value="false">JNO</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="image_settings">
+				<field
+					name="thumbnailmode" 
+					type="list" 
+					default="1"
+					class="jufilter"
+					label="MOD_JUSLIDESHOW_CROP_MODE"
+					description="MOD_JUSLIDESHOW_CROP_MODE_DESC">
+						<option value="0">MOD_JUSLIDESHOW_USING_IMAGE_SOURCE</option>
+						<option value="1">MOD_JUSLIDESHOW_USING_RESIZE_CROP</option>
+				</field>
+				
+				<field
+					name="imagequality"
+					type="text"
+					default="90"
+					filter="integer"
+					class="jufilter-thumbnailmode-1 validate-numeric"
+					label="MOD_JUSLIDESHOW_IMAGE_QUALITY"
+					description="MOD_JUSLIDESHOW_IMAGE_QUALITY_DESC" />
+					
+				<field name="alignment"
+					type="list"
+					default="c"
+					class="jufilter-thumbnailmode-1"
+					label="MOD_JUSLIDESHOW_ALIGNMENT"
+					description="MOD_JUSLIDESHOW_ALIGNMENT_DESC">
+					<option
+						value="c">Center</option>
+					<option
+						value="t">Top</option>
+					<option
+						value="tr">Top Right</option>
+					<option
+						value="tl">Top Left</option>
+					<option
+						value="b">Bottom</option>
+					<option
+						value="br">Bottom Right</option>
+					<option
+						value="bl">Bottom Left</option>
+					<option
+						value="l">Left</option>
+					<option
+						value="r">Right</option>
+				</field>
+				
+				<field name="zoomcrop"
+					type="list"
+					default="1"
+					class="jufilter-thumbnailmode-1"
+					label="MOD_JUSLIDESHOW_ZOOM_CROP"
+					description="MOD_JUSLIDESHOW_ZOOM_CROP_DESC">
+					<option
+						value="0">MOD_JUSLIDESHOW_FIT_NO_CROPPING</option>
+					<option
+						value="1">MOD_JUSLIDESHOW_CROP_AND_RESIZE</option>
+					<option
+						value="2">MOD_JUSLIDESHOW_RESIZE_AND_ADD_BODERS</option>
+					<option
+						value="3">MOD_JUSLIDESHOW_RESIZE_NO_BORDERS</option>
+				</field>
+				
+				<field name="filters"
+					type="list"
+					multiple="true"
+					default=""
+					class="jufilter-thumbnailmode-1"
+					label="MOD_JUSLIDESHOW_IMAGE_FILTERS"
+					description="MOD_JUSLIDESHOW_IMAGE_FILTERS_DESC">
+					<option
+						value="1">1: Negate</option>
+					<option
+						value="2">2: Grayscale</option>
+					<option
+						value="3">3: Brightness</option>
+					<option
+						value="4">4: Contrast</option>
+					<option
+						value="5">5: Colorize/Tint</option>
+					<option
+						value="6">6: Edge Detect</option>
+					<option
+						value="7">7: Emboss</option>
+					<option
+						value="8">8: Gaussian Blur</option>
+					<option
+						value="9">9: Selective Blur</option>
+					<option
+						value="10">10: Mean Removal</option>
+					<option
+						value="11">11: Smooth</option>
+				</field>
+				
+				<field
+					name="customfilters"
+					type="text"
+					default=""
+					class="jufilter-thumbnailmode-1"
+					label="MOD_JUSLIDESHOW_CUSTOM_FILTERS"
+					description="MOD_JUSLIDESHOW_CUSTOM_FILTERS_DESC" />
+					
+				<field name="sharpen"
+					type="radio"
+					default="0"
+					class="jufilter-thumbnailmode-1 btn-group"
+					label="MOD_JUSLIDESHOW_SHARPEN"
+					description="MOD_JUSLIDESHOW_SHARPEN_DESC">
+					<option
+						value="1">JYES</option>
+					<option
+						value="0">JNO</option>
+				</field>
+				
+				<field name="canvastransparency"
+					type="radio"
+					default="1"
+					class="jufilter-thumbnailmode-1 btn-group"
+					label="MOD_JUSLIDESHOW_CANVAS_TRANSPARENCY"
+					description="MOD_JUSLIDESHOW_CANVAS_TRANSPARENCY_DESC">
+					<option
+						value="1">JYES</option>
+					<option
+						value="0">JNO</option>
+				</field>
+				
+				<field
+					name="canvascolour"
+					type="text"
+					class="jufilter-thumbnailmode-1 jucolor"
+					default="FFFFFF"
+					label="MOD_JUSLIDESHOW_CANVASCOLOUR"
+					description="MOD_JUSLIDESHOW_CANVASCOLOUR_DESC" />
+			</fieldset>
+			
+			<fieldset name="advanced" addfieldpath="/modules/mod_juslideshow/elements/" >
+				<field
+					name="googlefonts"
+					type="textarea"
+					default=""
+					cols="50"
+					rows="5"
+					label="MOD_JUSLIDESHOW_GOOGLE_FONTS"
+					description="MOD_JUSLIDESHOW_GOOGLE_FONTS_DESC" />
+				
+				<field
+					name="youtube_params"
+					type="textarea"
+					cols="50"
+					rows="2"
+					default="hd=1&amp;wmode=opaque&amp;controls=1&amp;showinfo=0;rel=0"
+					label="MOD_JUSLIDESHOW_YOUTUBE_PARAMS"
+					description="MOD_JUSLIDESHOW_YOUTUBE_PARAMS_DESC" />
+				
+				<field
+					name="vimeo_params"
+					type="textarea"
+					cols="50"
+					rows="2"
+					default="title=0&amp;byline=0&amp;portrait=0;api=1"
+					label="MOD_JUSLIDESHOW_VIMEO_PARAMS"
+					description="MOD_JUSLIDESHOW_VIMEO_PARAMS_DESC" />
+					
+				<field
+					name="onLoad"
+					type="textarea"
+					default="null"
+					filter="raw"
+					cols="50"
+					rows="5"
+					label="MOD_JUSLIDESHOW_ONLOAD_FUNCTION"
+					description="MOD_JUSLIDESHOW_ONLOAD_FUNCTION_DESC" />
+					
+				<field
+					name="onImageSwitched"
+					type="textarea"
+					default="null"
+					filter="raw"
+					cols="50"
+					rows="5"
+					label="MOD_JUSLIDESHOW_ONIMAGESWITCHED_FUNCTION"
+					description="MOD_JUSLIDESHOW_ONIMAGESWITCHED_FUNCTION_DESC" />
+					
+				<field
+					name="onFinishAnimation"
+					type="textarea"
+					default="null"
+					filter="raw"
+					cols="50"
+					rows="5"
+					label="MOD_JUSLIDESHOW_ONFINISHANIMATION_FUNCTION"
+					description="MOD_JUSLIDESHOW_ONFINISHANIMATION_FUNCTION_DESC" />
+					
+				<field
+					name="onSetLabel"
+					type="textarea"
+					default="null"
+					filter="raw"
+					cols="50"
+					rows="5"
+					label="MOD_JUSLIDESHOW_ONSETLABEL_FUNCTION"
+					description="MOD_JUSLIDESHOW_ONSETLABEL_FUNCTION_DESC" />
+					
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option
+						value="itemid"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

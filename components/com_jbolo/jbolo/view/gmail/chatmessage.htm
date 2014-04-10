@@ -1,0 +1,18 @@
+<div class="onemsg">
+	{{if me}}
+		<div class="jbolo_avatar" id="userid">
+			<a href={{html purl}}>
+				<img src={{html avtr}}>
+			</a>
+		</div>
+		<div class="onemsg_chat" title="{{html ts}}" >
+			<span class="chatuser">{{html me}} : </span>
+			<span class="chatmessage">{{html message}}</span>
+		</div>
+	{{else}}
+		<span class="chatmessage" title="{{html ts}}">
+			<p class="bradcastMsg">{{html message}}</p>
+		</span>
+	{{/if}}
+	<div class="msg_sperator"></div>
+</div>

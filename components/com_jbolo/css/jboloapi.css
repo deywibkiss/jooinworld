@@ -1,0 +1,15 @@
+/**
+ * @package		JBolo
+ * @version		$versionID$
+ * @author		TechJoomla
+ * @author mail	extensions@techjoomla.com
+ * @website		http://techjoomla.com
+ * @copyright	Copyright © 2009-2013 TechJoomla. All rights reserved.
+ * @license		GNU General Public License version 2, or later
+*/
+.jbolo_word_break_wrap{
+	word-break: break-all; word-wrap: break-word;
+}
+.jbolo_pad_me{
+	padding:15px;
+}

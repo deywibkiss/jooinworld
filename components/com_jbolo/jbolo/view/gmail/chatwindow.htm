@@ -1,0 +1,77 @@
+<div class="jbolo_container" id="{{html chatid}}_outer">
+	<div class="jbolo_container" id="{{html chatid}}">
+
+		<div class="jbolo_title" id="{{html id}}">
+			<div class="{{html stcls}}" id="statusicon"></div>
+			<div class="chatuserid" id="userid">
+				<span class="chatuser" id="wt">{{html user}}</span>
+			</div>
+			<div class="windowfuncs">
+				<button id="{{html id}}" class="jbolo_mini" alt="{{html jbolo_lang['COM_JBOLO_MINIMIZE']}}" title="{{html jbolo_lang['COM_JBOLO_MINIMIZE']}}"></button>
+				<button class="jbolo_close" id="{{html id}}" alt="{{html jbolo_lang['COM_JBOLO_CLOSE']}}" title="{{html jbolo_lang['COM_JBOLO_CLOSE']}}" ></button>
+			</div>
+		</div>
+
+		<div class="remainingwindow" id="{{html id}}_chat">
+			<div id="{{html id}}_addusers" class="addusers">
+				{{if ctype==2}}
+					<div id="bg" class="plist"></div>
+				{{/if}}
+				<input type="hidden" class="inhd" id="" value=""></input>
+				<input type="text" autocomplete="off"  class="add_users" id="add_{{html id}}"  value="" tabindex="0" aria-haspopup="true"></input>
+				<button type="button" id="{{html chattype}}" class="invite" >{{html jbolo_lang['COM_JBOLO_INVITE']}}</button>
+			</div>
+
+			<div class="jbolo_tools" id="jbolo_tools">
+				{{if chathistory===1}}
+					<div>
+						<button id="chatHistory" title="{{html jbolo_lang['COM_JBOLO_VIEW_HISTORY']}}" class="chatHistory" alt="{{html jbolo_lang['COM_JBOLO_VIEW_HISTORY']}}" onClick="javascript:chatHistory({{html id}});"></button>
+					</div>
+				{{/if}}
+
+				{{if sendfile===1}}
+					<div>
+						<button id="sendfile" title="{{html jbolo_lang['COM_JBOLO_SEND_FILE']}}" class="sendfile" alt="{{html jbolo_lang['COM_JBOLO_SEND_FILE']}}" onClick="javascript:sendFile({{html id}});"></button>
+					</div>
+				{{/if}}
+
+				<div>
+					<button id="clearconversation" title="{{html jbolo_lang['COM_JBOLO_CLEAR_CONVERSATION']}}" class="clearconversation" alt="{{html jbolo_lang['COM_JBOLO_CLEAR_CONVERSATION']}}" onClick="javascript:clearChat({{html id}});"></button>
+				</div>
+
+				{{if groupchat===1}}
+					<div>
+						<button id="{{html id}}" title="{{html jbolo_lang['COM_JBOLO_ADD_USERS']}}" class="addpeople" alt="{{html jbolo_lang['COM_JBOLO_ADD_USERS']}}"></button>
+					</div>
+					{{if ctype==2}}
+						<div>
+							<button id="leavechat" title="{{html jbolo_lang['COM_JBOLO_LEAVE_CHAT']}}" class="leave" alt="{{html jbolo_lang['COM_JBOLO_LEAVE_CHAT']}}" onClick="javascript:leaveChat({{html id}});"></button>
+						</div>
+					{{/if}}
+				{{/if}}
+
+				{{if is_su===1}}
+					<div>
+						<button id="addActivityToTicket" title="{{html jbolo_lang['COM_JBOLO_ADD_ACTIVITY_TO_TICKET']}}" class="addTicketActivity" alt="{{html jbolo_lang['COM_JBOLO_ADD_ACTIVITY_TO_TICKET']}}" onClick="javascript:addActivityToTicket({{html id}});"></button>
+					</div>
+				{{/if}}
+			</div>
+
+			<div class="chatmessages" id="{{html chatid}}_chat"></div>
+
+			<div class="offline-msg" id=offline>
+				<div class="SH">
+					{{html user}} {{html jbolo_lang['COM_JBOLO_OFFLINE_MSG1']}} {{html user}} {{html jbolo_lang['COM_JBOLO_OFFLINE_MSG2']}}
+				</div>
+			</div>
+
+			<div class="inmessages"  id="{{html chatid}}_chatin">
+				<textarea class="chatboxtextarea" ignoreesc="true" onkeydown="javascript: return checkChatBoxInputKey(event,this);"></textarea>
+				<div class="smiley">
+					<button id="smiley" class="smiley" alt="" onClick="javascript:showSmiley(this);"></button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
